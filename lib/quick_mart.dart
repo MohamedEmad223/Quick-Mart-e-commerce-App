@@ -11,7 +11,7 @@ class QuickMart extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.onBoarding,
+      initialRoute: Routes.splash,
       onGenerateRoute: appRoutes.onGenerateRoute,
     );
   }
