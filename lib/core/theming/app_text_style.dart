@@ -36,4 +36,11 @@ class AppTextStyle {
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
   );
+
+  static TextStyle plusJakartaSans14mediummainColor =
+      GoogleFonts.plusJakartaSans(
+    color: AppColors.mainColor,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+  );
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quick_mart/core/theming/app_text_style.dart';
 import '../../../../../core/widgets/custom_text_form_feild.dart';
+import '../../../../../core/widgets/forget_password.dart';
 import '../widgets/head_of_login_screen_widgets.dart';
 import '../widgets/lable_text.dart';
 
@@ -49,6 +51,8 @@ class _LogInScreenState extends State<LogInScreen> {
                     : const Icon(Icons.visibility),
               ),
             ),
+            SizedBox(height: 20.h),
+            const ForgetPassword()
           ],
         ),
       ),
