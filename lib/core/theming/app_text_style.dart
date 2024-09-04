@@ -21,4 +21,10 @@ class AppTextStyle {
     fontSize: 20.sp,
     fontWeight: FontWeight.bold,
   );
+
+  static TextStyle cairo14normalsecGreyColor = GoogleFonts.plusJakartaSans(
+    color: AppColors.secGreyColor,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.normal,
+  );
 }

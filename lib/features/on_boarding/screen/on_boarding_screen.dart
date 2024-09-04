@@ -6,7 +6,6 @@ import 'package:quick_mart/features/on_boarding/logic/cubit/on_boarding_cubit.da
 
 import '../../../core/theming/app_colors.dart';
 import '../../../core/theming/app_text_style.dart';
-import '../../../core/widgets/custom_border_button.dart';
 import '../../../core/widgets/custom_button.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -57,13 +56,23 @@ class OnBoardingScreen extends StatelessWidget {
                                           onBoarding.onBoardingList[i].title,
                                           style: AppTextStyle.cairo24BoldWhite,
                                           textAlign: TextAlign.center,
-                                        )
+                                        ),
+                                        SizedBox(
+                                          height: 15.h,
+                                        ),
+                                        Text(
+                                          onBoarding
+                                              .onBoardingList[i].description,
+                                          style: AppTextStyle
+                                              .cairo14normalsecGreyColor,
+                                          textAlign: TextAlign.center,
+                                        ),
                                       ],
                                     ),
                                   )),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 100.0),
+                          padding: const EdgeInsets.only(top: 50.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: List.generate(
@@ -71,9 +80,9 @@ class OnBoardingScreen extends StatelessWidget {
                                 (index) => AnimatedContainer(
                                       duration:
                                           const Duration(milliseconds: 500),
-                                      curve: Curves.bounceInOut,
+                                      curve: Curves.easeInOut,
                                       width: index == onBoarding.currentIndex
-                                          ? 18
+                                          ? 10
                                           : 8,
                                       height: 8,
                                       margin: const EdgeInsets.all(2),
@@ -88,45 +97,46 @@ class OnBoardingScreen extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
-                              left: 30, right: 30, bottom: 15, top: 22),
+                              left: 30, right: 30, bottom: 50, top: 22),
                           child: CustomButton(
+                            height: 60.h,
                             buttonStyle: AppTextStyle.cairo16BoldWhite,
-                            color: AppColors.mainColor,
+                            color: AppColors.blackColor,
                             buttonText: onBoarding.currentIndex ==
                                     onBoarding.onBoardingList.length - 1
-                                ? 'أبدأ'
-                                : 'التالى',
+                                ? 'Start'
+                                : 'Next',
                             buttonAction: () {
                               context.read<OnBoardingCubit>().transition();
                             },
                           ),
                         ),
-                        onBoarding.currentIndex ==
-                                onBoarding.onBoardingList.length - 1
-                            ? Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 30, right: 30, bottom: 35),
-                                child: SizedBox(
-                                  width: double.infinity,
-                                  height: 35.h,
-                                ),
-                              )
-                            : Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 30, right: 30, bottom: 35),
-                                child: CustomBorderButton(
-                                  buttonText: 'أبدأ',
-                                  buttonStyle:
-                                      AppTextStyle.cairo16BoldMainColor,
-                                  buttonAction: () {
-                                    WidgetsBinding.instance
-                                        .addPostFrameCallback((timeStamp) {
-                                      Navigator.of(context)
-                                          .pushReplacementNamed(Routes.home);
-                                    });
-                                  },
-                                ),
-                              )
+                        // onBoarding.currentIndex ==
+                        //         onBoarding.onBoardingList.length - 1
+                        //     ? Padding(
+                        //         padding: const EdgeInsets.only(
+                        //             left: 30, right: 30, bottom: 35),
+                        //         child: SizedBox(
+                        //           width: double.infinity,
+                        //           height: 35.h,
+                        //         ),
+                        //       )
+                        //     : Padding(
+                        //         padding: const EdgeInsets.only(
+                        //             left: 30, right: 30, bottom: 35),
+                        //         child: CustomBorderButton(
+                        //           buttonText: 'أبدأ',
+                        //           buttonStyle:
+                        //               AppTextStyle.cairo16BoldMainColor,
+                        //           buttonAction: () {
+                        //             WidgetsBinding.instance
+                        //                 .addPostFrameCallback((timeStamp) {
+                        //               Navigator.of(context)
+                        //                   .pushReplacementNamed(Routes.home);
+                        //             });
+                        //           },
+                        //         ),
+                        //       )
                       ],
                     ),
                   ],
