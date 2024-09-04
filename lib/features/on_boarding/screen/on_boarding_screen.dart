@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quick_mart/core/routes/routes.dart';
 import 'package:quick_mart/features/on_boarding/logic/cubit/on_boarding_cubit.dart';
 
@@ -32,6 +33,39 @@ class OnBoardingScreen extends StatelessWidget {
                   children: [
                     Column(
                       children: [
+                        Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 16.w),
+                                  child: SvgPicture.asset(
+                                    'assets/svgs/on_boarding/quickmart.svg',
+                                    width: 100.w,
+                                    height: 30.h,
+                                  ),
+                                ),
+                                if (onBoarding.currentIndex !=
+                                    onBoarding.onBoardingList.length - 1)
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 16.w),
+                                    child: TextButton(
+                                        onPressed: () {},
+                                        child: const Text(
+                                          'Skip For Now',
+                                          style: TextStyle(
+                                            color: AppColors.mainColor,
+                                            fontSize: 16,
+                                          ),
+                                        )),
+                                  )
+                              ],
+                            ),
+                          ],
+                        ),
                         Expanded(
                           child: PageView.builder(
                               controller: onBoarding.pageController,
@@ -111,32 +145,6 @@ class OnBoardingScreen extends StatelessWidget {
                             },
                           ),
                         ),
-                        // onBoarding.currentIndex ==
-                        //         onBoarding.onBoardingList.length - 1
-                        //     ? Padding(
-                        //         padding: const EdgeInsets.only(
-                        //             left: 30, right: 30, bottom: 35),
-                        //         child: SizedBox(
-                        //           width: double.infinity,
-                        //           height: 35.h,
-                        //         ),
-                        //       )
-                        //     : Padding(
-                        //         padding: const EdgeInsets.only(
-                        //             left: 30, right: 30, bottom: 35),
-                        //         child: CustomBorderButton(
-                        //           buttonText: 'أبدأ',
-                        //           buttonStyle:
-                        //               AppTextStyle.cairo16BoldMainColor,
-                        //           buttonAction: () {
-                        //             WidgetsBinding.instance
-                        //                 .addPostFrameCallback((timeStamp) {
-                        //               Navigator.of(context)
-                        //                   .pushReplacementNamed(Routes.home);
-                        //             });
-                        //           },
-                        //         ),
-                        //       )
                       ],
                     ),
                   ],
