@@ -29,6 +29,10 @@ class LogInScreen extends StatelessWidget {
             const LableText(
               lableText: 'Password',
             ),
+            SizedBox(height: 20.h),
+            const CustomTextFormFeild(
+              hintText: 'Enter your Password',
+            ),
           ],
         ),
       ),
