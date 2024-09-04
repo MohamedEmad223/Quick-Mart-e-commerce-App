@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_mart/core/routes/routes.dart';
 import 'package:quick_mart/features/on_boarding/logic/cubit/on_boarding_cubit.dart';
 
-import '../../../core/helpers/app_colors.dart';
+import '../../../core/theming/app_colors.dart';
 import '../../../core/theming/app_text_style.dart';
 import '../../../core/widgets/custom_border_button.dart';
 import '../../../core/widgets/custom_button.dart';
@@ -50,10 +50,13 @@ class OnBoardingScreen extends StatelessWidget {
                                         Expanded(
                                             child: Image.asset(
                                           onBoarding.onBoardingList[i].image,
-                                          fit: BoxFit.cover,
+                                          width: 250.w,
+                                          height: 50.h,
                                         )),
                                         Text(
                                           onBoarding.onBoardingList[i].title,
+                                          style: AppTextStyle.cairo24BoldWhite,
+                                          textAlign: TextAlign.center,
                                         )
                                       ],
                                     ),
