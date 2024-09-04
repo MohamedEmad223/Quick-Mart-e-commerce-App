@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart/core/routes/routes.dart';
-import 'package:quick_mart/features/on_boarding/on_boarding_screen.dart';
+import 'package:quick_mart/features/on_boarding/screen/on_boarding_screen.dart';
 
 import '../../features/home/home_screen.dart';
 import '../../features/splash/screens/splash_screen.dart';
