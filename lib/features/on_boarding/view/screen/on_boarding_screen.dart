@@ -92,7 +92,8 @@ class OnBoardingScreen extends StatelessWidget {
                                         )),
                                         Text(
                                           onBoarding.onBoardingList[i].title,
-                                          style: AppTextStyle.cairo24BoldWhite,
+                                          style: AppTextStyle
+                                              .plusJakartaSans24BoldblackColor,
                                           textAlign: TextAlign.center,
                                         ),
                                         SizedBox(
@@ -102,7 +103,7 @@ class OnBoardingScreen extends StatelessWidget {
                                           onBoarding
                                               .onBoardingList[i].description,
                                           style: AppTextStyle
-                                              .cairo14normalsecGreyColor,
+                                              .plusJakartaSans14normalsecGreyColor,
                                           textAlign: TextAlign.center,
                                         ),
                                       ],
@@ -138,7 +139,8 @@ class OnBoardingScreen extends StatelessWidget {
                               left: 30, right: 30, bottom: 50, top: 22),
                           child: CustomButton(
                             height: 60.h,
-                            buttonStyle: AppTextStyle.cairo16BoldWhite,
+                            buttonStyle:
+                                AppTextStyle.plusJakartaSans16BoldWhite,
                             color: AppColors.blackColor,
                             buttonText: onBoarding.currentIndex ==
                                     onBoarding.onBoardingList.length - 1
