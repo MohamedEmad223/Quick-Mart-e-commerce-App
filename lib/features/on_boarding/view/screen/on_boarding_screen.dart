@@ -148,7 +148,7 @@ class OnBoardingScreen extends StatelessWidget {
                               if (onBoarding.currentIndex ==
                                   onBoarding.onBoardingList.length - 1) {
                                 Navigator.of(context)
-                                    .pushReplacementNamed(Routes.signUp);
+                                    .pushReplacementNamed(Routes.logIn);
                               }
                               context.read<OnBoardingCubit>().transition();
                             },
