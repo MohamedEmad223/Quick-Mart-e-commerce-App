@@ -5,9 +5,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quick_mart/core/routes/routes.dart';
 import 'package:quick_mart/features/on_boarding/logic/cubit/on_boarding_cubit.dart';
 
-import '../../../core/theming/app_colors.dart';
-import '../../../core/theming/app_text_style.dart';
-import '../../../core/widgets/custom_button.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_text_style.dart';
+import '../../../../core/widgets/custom_button.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -52,8 +52,12 @@ class OnBoardingScreen extends StatelessWidget {
                                   Padding(
                                     padding:
                                         EdgeInsets.symmetric(horizontal: 16.w),
-                                    child: TextButton(
-                                        onPressed: () {},
+                                    child: GestureDetector(
+                                        onTap: () {
+                                          Navigator.of(context)
+                                              .pushReplacementNamed(
+                                                  Routes.logIn);
+                                        },
                                         child: const Text(
                                           'Skip For Now',
                                           style: TextStyle(
@@ -141,6 +145,11 @@ class OnBoardingScreen extends StatelessWidget {
                                 ? 'Start'
                                 : 'Next',
                             buttonAction: () {
+                              if (onBoarding.currentIndex ==
+                                  onBoarding.onBoardingList.length - 1) {
+                                Navigator.of(context)
+                                    .pushReplacementNamed(Routes.signUp);
+                              }
                               context.read<OnBoardingCubit>().transition();
                             },
                           ),
