@@ -4,9 +4,15 @@ import '../../../../../core/widgets/custom_text_form_feild.dart';
 import '../widgets/head_of_login_screen_widgets.dart';
 import '../widgets/lable_text.dart';
 
-class LogInScreen extends StatelessWidget {
+class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
 
+  @override
+  State<LogInScreen> createState() => _LogInScreenState();
+}
+
+class _LogInScreenState extends State<LogInScreen> {
+  bool _isObscure = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,8 +36,18 @@ class LogInScreen extends StatelessWidget {
               lableText: 'Password',
             ),
             SizedBox(height: 20.h),
-            const CustomTextFormFeild(
+            CustomTextFormFeild(
               hintText: 'Enter your Password',
+              suffixIcon: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _isObscure = !_isObscure;
+                  });
+                },
+                child: _isObscure
+                    ? const Icon(Icons.visibility_off)
+                    : const Icon(Icons.visibility),
+              ),
             ),
           ],
         ),
