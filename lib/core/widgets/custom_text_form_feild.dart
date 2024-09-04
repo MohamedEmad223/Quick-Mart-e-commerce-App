@@ -54,8 +54,6 @@ class CustomTextFormFeild extends StatelessWidget {
           color: AppColors.greyColor,
         ),
         suffixIcon: suffixIcon,
-        fillColor: backgroundColor ?? Colors.white,
-        filled: true,
       ),
       obscureText: isObscureText ?? false,
       style: inputTextStyle ??
