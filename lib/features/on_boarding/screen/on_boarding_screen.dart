@@ -5,6 +5,7 @@ import 'package:quick_mart/core/routes/routes.dart';
 import 'package:quick_mart/features/on_boarding/logic/cubit/on_boarding_cubit.dart';
 
 import '../../../core/helpers/app_colors.dart';
+import '../../../core/theming/app_text_style.dart';
 import '../../../core/widgets/custom_border_button.dart';
 import '../../../core/widgets/custom_button.dart';
 
@@ -86,7 +87,7 @@ class OnBoardingScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(
                               left: 30, right: 30, bottom: 15, top: 22),
                           child: CustomButton(
-                            buttonStyle: AppTextStyles.cairo16BoldWhite,
+                            buttonStyle: AppTextStyle.cairo16BoldWhite,
                             color: AppColors.mainColor,
                             buttonText: onBoarding.currentIndex ==
                                     onBoarding.onBoardingList.length - 1
@@ -113,7 +114,7 @@ class OnBoardingScreen extends StatelessWidget {
                                 child: CustomBorderButton(
                                   buttonText: 'أبدأ',
                                   buttonStyle:
-                                      AppTextStyles.cairo16BoldMainColor,
+                                      AppTextStyle.cairo16BoldMainColor,
                                   buttonAction: () {
                                     WidgetsBinding.instance
                                         .addPostFrameCallback((timeStamp) {
