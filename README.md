@@ -1,4 +1,4 @@
-# quick_mart
+ ✨quick_mart
 
 An e-commerce app using flutter have a lot of feature like 
 - Auth
