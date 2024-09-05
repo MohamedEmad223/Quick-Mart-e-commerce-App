@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart/core/routes/routes.dart';
 import 'package:quick_mart/features/auth/login/views/screens/log_in_screen.dart';
-import 'package:quick_mart/features/auth/sign_up/sign_up_screen.dart';
+import 'package:quick_mart/features/auth/sign_up/views/screens/sign_up_screen.dart';
 import 'package:quick_mart/features/on_boarding/view/screen/on_boarding_screen.dart';
 
 import '../../features/home/home_screen.dart';
