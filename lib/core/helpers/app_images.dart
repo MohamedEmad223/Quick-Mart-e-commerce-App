@@ -8,4 +8,6 @@ class AppImages {
       'assets/images/on_boarding/on_boarding_two.png';
   static const String onboarding3 =
       'assets/images/on_boarding/on_boarding_three.png';
+  //----------------login screen----------------
+  static const String loginLogo = 'assets/svgs/on_boarding/quickmart.svg';
 }
