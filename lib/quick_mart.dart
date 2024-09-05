@@ -13,6 +13,10 @@ class QuickMart extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, _) => MaterialApp(
+        theme: ThemeData(
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          scaffoldBackgroundColor: Colors.white,
+        ),
         debugShowCheckedModeBanner: false,
         initialRoute: Routes.splash,
         onGenerateRoute: AppRoutes().onGenerateRoute,
