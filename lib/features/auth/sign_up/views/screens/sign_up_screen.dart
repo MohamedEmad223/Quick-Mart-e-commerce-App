@@ -39,10 +39,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
               hintText: 'Enter your name',
             ),
             SizedBox(height: 20.h),
-            SizedBox(height: 20.h),
             const LableText(
               lableText: 'Email',
             ),
+            SizedBox(height: 20.h),
             const CustomTextFormFeild(
               hintText: 'Enter your email',
             ),
