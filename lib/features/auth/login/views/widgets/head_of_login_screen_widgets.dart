@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../core/theming/app_text_style.dart';
-import '../../../sign_up/sign_up_screen.dart';
+import '../../../../../core/widgets/do_not_have_an_account.dart';
+import '../../../sign_up/views/screens/sign_up_screen.dart';
 
 class HeadOfLoginScreenWidgets extends StatelessWidget {
   const HeadOfLoginScreenWidgets({super.key});
@@ -20,27 +21,10 @@ class HeadOfLoginScreenWidgets extends StatelessWidget {
           textAlign: TextAlign.left,
           style: AppTextStyle.plusJakartaSans24BoldblackColor,
         ),
-        Row(
-          children: [
-            Text(
-              'Don’t have an account?',
-              style: AppTextStyle.plusJakartaSans14normalsecGreyColor,
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const SignUpScreen(),
-                  ),
-                );
-              },
-              child: Text(
-                ' Sign Up',
-                style: AppTextStyle.plusJakartaSans16BoldMainColor,
-              ),
-            ),
-          ],
-        ),
+        const DoNotHaveAnAccount(
+          text: 'Sign Up',
+          screen: SignUpScreen(),
+        )
       ],
     );
   }
