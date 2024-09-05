@@ -1,16 +1,13 @@
 # quick_mart
 
-A new Flutter project.
+An e-commerce app using flutter have a lot of feature like 
+- Auth
+- add to cart
+- cheakout
+- user profile
+- payment
 
-## Getting Started
+and this is the arch of the project:-
 
-This project is a starting point for a Flutter application.
+![342106898-67aff57d-6f2f-4225-a54f-5b9c5c8247ce](https://github.com/user-attachments/assets/b7bb8411-7ea2-4778-b5f0-b7a8e743429d)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
