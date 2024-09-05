@@ -2,6 +2,7 @@
 
 An e-commerce app using flutter have a lot of feature like 
 - Auth
+- add/remove favourites
 - add to cart
 - cheakout
 - user profile
