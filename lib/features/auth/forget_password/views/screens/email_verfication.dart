@@ -6,6 +6,7 @@ import '../../../../../core/theming/app_text_style.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import '../../../../../core/widgets/custom_text_form_feild.dart';
 import '../../../login/views/widgets/lable_text.dart';
+import '../widgets/head_of_forget_password_widgets.dart';
 
 class EmailConfirmation extends StatelessWidget {
   const EmailConfirmation({super.key});
@@ -20,16 +21,9 @@ class EmailConfirmation extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Email Confirmation',
-              textAlign: TextAlign.left,
-              style: AppTextStyle.plusJakartaSans24BoldblackColor,
-            ),
-            SizedBox(height: 10.h),
-            Text(
-              'Enter your email address for verification.',
-              textAlign: TextAlign.left,
-              style: AppTextStyle.plusJakartaSans14normalsecGreyColor,
+            const HeadOfForgetPasswordWidgets(
+              textOne: 'Email Confirmation',
+              textTwo: 'Enter your email address for verification.',
             ),
             SizedBox(height: 20.h),
             const LableText(
