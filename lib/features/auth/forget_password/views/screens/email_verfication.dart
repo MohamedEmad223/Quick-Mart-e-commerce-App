@@ -36,7 +36,7 @@ class EmailConfirmation extends StatelessWidget {
             SizedBox(height: 40.h),
             CustomButton(
               height: 50.h,
-              buttonText: 'Login',
+              buttonText: 'send',
               buttonAction: () {},
               buttonStyle: AppTextStyle.plusJakartaSans16BoldWhite,
               color: AppColors.blackColor,
