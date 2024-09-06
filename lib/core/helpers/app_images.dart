@@ -10,4 +10,6 @@ class AppImages {
       'assets/images/on_boarding/on_boarding_three.png';
   //----------------login screen----------------
   static const String loginLogo = 'assets/svgs/on_boarding/quickmart.svg';
+  //----------------success screen----------------
+  static const String successLogo = 'assets/svgs/success/Rectangle 1741.svg';
 }
