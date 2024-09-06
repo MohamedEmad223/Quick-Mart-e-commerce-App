@@ -22,7 +22,7 @@ class OnBoardingScreen extends StatelessWidget {
           builder: (context, state) {
             if (state is GoHomeState) {
               WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-                Navigator.of(context).pushReplacementNamed(Routes.home);
+                Navigator.of(context).pushReplacementNamed(Routes.logIn);
               });
             }
             final onBoarding = context.watch<OnBoardingCubit>();
@@ -149,8 +149,11 @@ class OnBoardingScreen extends StatelessWidget {
                             buttonAction: () {
                               if (onBoarding.currentIndex ==
                                   onBoarding.onBoardingList.length - 1) {
-                                Navigator.of(context)
-                                    .pushReplacementNamed(Routes.logIn);
+                                WidgetsBinding.instance
+                                    .addPostFrameCallback((timeStamp) {
+                                  Navigator.of(context)
+                                      .pushReplacementNamed(Routes.logIn);
+                                });
                               }
                               context.read<OnBoardingCubit>().transition();
                             },
