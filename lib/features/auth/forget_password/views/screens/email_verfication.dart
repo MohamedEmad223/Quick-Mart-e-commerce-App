@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quick_mart/features/auth/forget_password/views/screens/send_code_screen.dart';
 
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_text_style.dart';
@@ -37,7 +38,13 @@ class EmailConfirmation extends StatelessWidget {
             CustomButton(
               height: 50.h,
               buttonText: 'send',
-              buttonAction: () {},
+              buttonAction: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SendCodeScreen(),
+                    ));
+              },
               buttonStyle: AppTextStyle.plusJakartaSans16BoldWhite,
               color: AppColors.blackColor,
             ),
