@@ -52,6 +52,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
             SizedBox(height: 20.h),
             CustomTextFormFeild(
+              isObscureText: _isObscure,
               hintText: 'Enter your Password',
               suffixIcon: GestureDetector(
                 onTap: () {
