@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pinput/pinput.dart';
+import 'package:quick_mart/core/theming/app_colors.dart';
 import 'package:quick_mart/features/auth/forget_password/views/widgets/head_of_forget_password_widgets.dart';
+
+import '../widgets/them_of_pinput.dart';
 
 class SendCodeScreen extends StatelessWidget {
   const SendCodeScreen({super.key});
@@ -19,7 +23,29 @@ class SendCodeScreen extends StatelessWidget {
                 textTwo:
                     'Enter the 6-digit verification code send to your\n email address.'),
             SizedBox(height: 20.h),
-            
+            Pinput(
+              keyboardType: TextInputType.number,
+              length: 6,
+              obscuringCharacter: '•',
+              defaultPinTheme: defaultPinTheme,
+              autofocus: true,
+              focusedPinTheme: defaultPinTheme.copyWith(
+                decoration: defaultPinTheme.decoration?.copyWith(
+                  border: Border.all(
+                    color: AppColors.mainColor,
+                    width: 3,
+                  ),
+                ),
+              ),
+              submittedPinTheme: defaultPinTheme.copyWith(
+                decoration: defaultPinTheme.decoration?.copyWith(
+                  color: Colors.white,
+                ),
+              ),
+              pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
+              showCursor: true,
+              onCompleted: (pin) async {},
+            ),
           ],
         ),
       )),
