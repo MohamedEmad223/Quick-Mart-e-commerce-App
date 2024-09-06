@@ -4,6 +4,8 @@ import 'package:pinput/pinput.dart';
 import 'package:quick_mart/core/theming/app_colors.dart';
 import 'package:quick_mart/features/auth/forget_password/views/widgets/head_of_forget_password_widgets.dart';
 
+import '../../../../../core/theming/app_text_style.dart';
+import '../../../../../core/widgets/custom_button.dart';
 import '../widgets/them_of_pinput.dart';
 
 class SendCodeScreen extends StatelessWidget {
@@ -45,6 +47,19 @@ class SendCodeScreen extends StatelessWidget {
               pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
               showCursor: true,
               onCompleted: (pin) async {},
+            ),
+            SizedBox(height: 20.h),
+            Text(
+              'Resend code',
+              style: AppTextStyle.plusJakartaSans16BoldMainColor,
+            ),
+            SizedBox(height: 20.h),
+            CustomButton(
+              height: 50.h,
+              buttonText: 'Verify',
+              buttonAction: () {},
+              buttonStyle: AppTextStyle.plusJakartaSans16BoldWhite,
+              color: AppColors.blackColor,
             ),
           ],
         ),
