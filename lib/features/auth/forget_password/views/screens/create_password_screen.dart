@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quick_mart/core/routes/routes.dart';
 import 'package:quick_mart/core/theming/app_colors.dart';
 import 'package:quick_mart/features/auth/forget_password/views/widgets/head_of_forget_password_widgets.dart';
 
@@ -75,7 +76,9 @@ class _CreatePasswordScreenState extends State<CreatePasswordScreen> {
               height: 50.h,
               color: AppColors.blackColor,
               buttonText: 'Save',
-              buttonAction: () {},
+              buttonAction: () {
+                Navigator.pushReplacementNamed(context, Routes.home);
+              },
             ),
           ],
         ),
