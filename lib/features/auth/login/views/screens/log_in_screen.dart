@@ -48,6 +48,7 @@ class _LogInScreenState extends State<LogInScreen> {
               ),
               SizedBox(height: 20.h),
               CustomTextFormFeild(
+                isObscureText: _isObscure,
                 hintText: 'Enter your Password',
                 suffixIcon: GestureDetector(
                   onTap: () {

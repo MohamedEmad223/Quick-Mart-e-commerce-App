@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
 import 'package:quick_mart/core/theming/app_colors.dart';
+import 'package:quick_mart/features/auth/forget_password/views/screens/create_password_screen.dart';
 import 'package:quick_mart/features/auth/forget_password/views/widgets/head_of_forget_password_widgets.dart';
 
 import '../../../../../core/theming/app_text_style.dart';
@@ -57,7 +58,13 @@ class SendCodeScreen extends StatelessWidget {
             CustomButton(
               height: 50.h,
               buttonText: 'Verify',
-              buttonAction: () {},
+              buttonAction: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CreatePasswordScreen(),
+                    ));
+              },
               buttonStyle: AppTextStyle.plusJakartaSans16BoldWhite,
               color: AppColors.blackColor,
             ),
