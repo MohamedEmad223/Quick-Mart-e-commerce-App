@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
-import '../errors/api/exceptions/exception_helper_methods.dart';
-import '../helpers/app_constants.dart';
+import '../constants/app_constants.dart';
+import '../error/api/exceptions/exceptions_helper_methods.dart';
 import 'api_services.dart';
 
 class DioHandler extends ApiServices {
