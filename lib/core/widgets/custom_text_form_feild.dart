@@ -14,7 +14,8 @@ class CustomTextFormFeild extends StatelessWidget {
       required this.hintText,
       this.isObscureText,
       this.suffixIcon,
-      this.backgroundColor});
+      this.backgroundColor,
+      this.kyTyp, required this.controller, this.validator});
   final EdgeInsetsGeometry? contentPadding;
   final InputBorder? focusedBorder;
   final InputBorder? enabledBorder;
@@ -24,10 +25,16 @@ class CustomTextFormFeild extends StatelessWidget {
   final bool? isObscureText;
   final Widget? suffixIcon;
   final Color? backgroundColor;
+  final TextInputType? kyTyp;
+  final TextEditingController controller;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator,
+      controller: controller,
+      keyboardType: kyTyp,
       cursorColor: AppColors.mainColor,
       decoration: InputDecoration(
         isDense: true,

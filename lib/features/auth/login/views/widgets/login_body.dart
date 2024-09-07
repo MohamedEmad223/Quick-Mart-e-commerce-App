@@ -41,13 +41,25 @@ class _LoginBodyState extends State<LoginBody> {
       child: Form(
         key: formKey,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const LableText(
               lableText: 'Email',
             ),
             SizedBox(height: 20.h),
-            const CustomTextFormFeild(
+            CustomTextFormFeild(
+              controller: context.read<LoginCubit>().emailController,
+              kyTyp: TextInputType.emailAddress,
               hintText: 'Enter your email',
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Please enter your email';
+                }
+                if (!value.contains('@')) {
+                  return 'Please enter a valid email';
+                }
+                return null;
+              },
             ),
             SizedBox(height: 20.h),
             const LableText(
@@ -55,6 +67,17 @@ class _LoginBodyState extends State<LoginBody> {
             ),
             SizedBox(height: 20.h),
             CustomTextFormFeild(
+              controller: context.read<LoginCubit>().passwordController,
+              kyTyp: TextInputType.visiblePassword,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Please enter your password';
+                }
+                if (value.length < 6) {
+                  return 'Password must be at least 6 characters';
+                }
+                return null;
+              },
               isObscureText: _isObscure,
               hintText: 'Enter your Password',
               suffixIcon: GestureDetector(
