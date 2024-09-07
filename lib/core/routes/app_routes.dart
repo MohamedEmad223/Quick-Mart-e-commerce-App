@@ -5,7 +5,6 @@ import 'package:quick_mart/core/routes/routes.dart';
 import 'package:quick_mart/features/auth/forget_password/views/screens/success_screen.dart';
 import 'package:quick_mart/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:quick_mart/features/auth/login/views/screens/log_in_screen.dart';
-import 'package:quick_mart/features/auth/sign_up/views/screens/sign_up_screen.dart';
 import 'package:quick_mart/features/on_boarding/view/screen/on_boarding_screen.dart';
 
 import '../../features/auth/login/data/repo/login_repo.dart';
@@ -30,8 +29,8 @@ class AppRoutes {
                   ),
                   child: const LogInScreen(),
                 ));
-      case Routes.signUp:
-        return MaterialPageRoute(builder: (context) => const SignUpScreen());
+      // case Routes.signUp:
+      //   return MaterialPageRoute(builder: (context) => const SignUpScreen());
       case Routes.home:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
       case Routes.success:

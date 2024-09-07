@@ -18,11 +18,11 @@ class LogInScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const HeadOfScreenOfAuthWidgets(
-                textOne: 'Log In',
-                textTwo: 'Sign up',
-                screen: SignUpScreen(),
-              ),
+              // const HeadOfScreenOfAuthWidgets(
+              //   textOne: 'Log In',
+              //   textTwo: 'Sign up',
+              //   screen: SignUpScreen(),
+              // ),
               SizedBox(height: 40.h),
               const LoginBody(),
               SizedBox(height: 50.h),

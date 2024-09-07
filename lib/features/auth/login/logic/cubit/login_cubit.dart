@@ -16,7 +16,7 @@ class LoginCubit extends Cubit<LoginState> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  Future<void> login(String path, String data) async {
+  Future<void> login(String path, Map<String,dynamic> data) async {
     emit(LoginLoading());
     final result = await _loginRepo.login(path, data);
     result.fold(

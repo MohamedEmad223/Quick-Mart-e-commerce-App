@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quick_mart/core/constants/app_constants.dart';
 import 'package:quick_mart/core/routes/routes.dart';
 import 'package:quick_mart/core/widgets/custom_text_form_feild.dart';
-import 'package:quick_mart/features/auth/login/data/model/login_model.dart';
 import 'package:quick_mart/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:quick_mart/features/auth/login/views/widgets/lable_text.dart';
 
@@ -24,7 +24,6 @@ class _LoginBodyState extends State<LoginBody> {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-    LoginModel loginModel = LoginModel();
     return BlocListener<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginError) {
@@ -92,12 +91,22 @@ class _LoginBodyState extends State<LoginBody> {
               ),
             ),
             SizedBox(height: 20.h),
-            const ForgetPassword(),
+            // const ForgetPassword(),
             SizedBox(height: 25.h),
             CustomButton(
               height: 50.h,
               buttonText: 'Login',
-              buttonAction: () {},
+              buttonAction: () async {
+                if (formKey.currentState!.validate()) {
+                  await context
+                      .read<LoginCubit>()
+                      .login(AppConstants.loginPath, {
+                    'email': context.read<LoginCubit>().emailController.text,
+                    'password':
+                        context.read<LoginCubit>().passwordController.text,
+                  });
+                }
+              },
               buttonStyle: AppTextStyle.plusJakartaSans16BoldWhite,
               color: AppColors.blackColor,
             ),

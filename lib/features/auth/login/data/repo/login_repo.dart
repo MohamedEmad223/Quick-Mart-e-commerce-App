@@ -10,7 +10,7 @@ class LoginRepo {
 
   Future<Either<String, LoginModel>> login(
     String path,
-    String data,
+    Map<String,dynamic> data,
   ) async {
     try {
       var response = await _apiServices.post(path, data: data);

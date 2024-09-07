@@ -3,7 +3,7 @@ class LoginModel {
   User? user;
   String? token;
 
-  LoginModel({this.message, this.user, this.token});
+  LoginModel({this.message, this.user, this.token, required String email});
 
   LoginModel.fromJson(Map<String, dynamic> json) {
     message = json['message'];
