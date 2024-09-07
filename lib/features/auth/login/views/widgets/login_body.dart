@@ -1,7 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_mart/core/constants/app_constants.dart';
+import 'package:quick_mart/core/helpers/helper_methods.dart';
 import 'package:quick_mart/core/routes/routes.dart';
 import 'package:quick_mart/core/widgets/custom_text_form_feild.dart';
 import 'package:quick_mart/features/auth/login/logic/cubit/login_cubit.dart';
@@ -10,7 +13,6 @@ import 'package:quick_mart/features/auth/login/views/widgets/lable_text.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_text_style.dart';
 import '../../../../../core/widgets/custom_button.dart';
-import '../../../../../core/widgets/forget_password.dart';
 
 class LoginBody extends StatefulWidget {
   const LoginBody({super.key});
@@ -27,14 +29,16 @@ class _LoginBodyState extends State<LoginBody> {
     return BlocListener<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginError) {
-          Navigator.pop(context);
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(state.message!)));
+          HelperMethods.showCustomSnackBarError(context, state.message!);
+          log(state.message.toString());
+        }
+        if (state is LoginLoading) {
+          HelperMethods.showLoadingAlertDialog(context);
         }
         if (state is LoginSuccess) {
-          Navigator.pushNamed(context, Routes.home);
-          ScaffoldMessenger.of(context)
-              .showSnackBar(const SnackBar(content: Text('Login Success')));
+          Navigator.pushNamedAndRemoveUntil(
+              context, Routes.home, (route) => false);
+          HelperMethods.showCustomSnackBarSuccess(context, 'Login Success');
         }
       },
       child: Form(

@@ -11,7 +11,7 @@ class HelperMethods {
       SnackBar(
         content: Text(
           title,
-          textAlign: TextAlign.right,
+          textAlign: TextAlign.left,
           style: AppTextStyle.plusJakartaSans16BoldWhite,
         ),
         backgroundColor: AppColors.mainColor,
@@ -27,7 +27,7 @@ class HelperMethods {
       SnackBar(
         content: Text(
           title,
-          textAlign: TextAlign.right,
+          textAlign: TextAlign.left,
           style: AppTextStyle.plusJakartaSans16BoldWhite,
         ),
         backgroundColor: AppColors.tFFErrorColor,
