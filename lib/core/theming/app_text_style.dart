@@ -23,7 +23,7 @@ class AppTextStyle {
   );
 
   static TextStyle plusJakartaSans13cyanColor = GoogleFonts.plusJakartaSans(
-    color: AppColors.cyanColor,
+    color: AppColors.cyan,
     fontSize: 13.sp,
     fontWeight: FontWeight.w600,
   );
