@@ -36,6 +36,8 @@ dependencies:
   flutter_native_splash: ^2.4.1
   # for otp code
   pinput: ^5.0.0
+  # for lints
+  dartz: ^0.10.1
 
 
   

@@ -1,0 +1,24 @@
+import 'dart:developer';
+
+import 'package:dartz/dartz.dart';
+import 'package:quick_mart/core/network/api_services.dart';
+import 'package:quick_mart/features/auth/login/data/model/login_model.dart';
+
+class LoginRepo {
+  final ApiServices _apiServices;
+  LoginRepo(this._apiServices);
+
+  Future<Either<String, LoginModel>> login(
+    String path,
+    String data,
+  ) async {
+    try {
+      var response = await _apiServices.post(path, data: data);
+      var result = LoginModel.fromJson(response);
+      log(result.toString());
+      return Right(result);
+    } catch (e) {
+      return Left(e.toString());
+    }
+  }
+}
