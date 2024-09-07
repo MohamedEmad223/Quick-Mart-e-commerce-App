@@ -10,7 +10,7 @@ part 'login_state.dart';
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit(this._loginRepo) : super(LoginInitial());
 
-  late LoginRepo _loginRepo;
+  late final LoginRepo _loginRepo;
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
