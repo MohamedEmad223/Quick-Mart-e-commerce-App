@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quick_mart/core/widgets/custom_text_for_auth.dart';
 
 import '../helpers/app_images.dart';
-import '../routes/routes.dart';
 import 'do_not_have_an_account.dart';
 
 class HeadOfScreenOfAuthWidgets extends StatelessWidget {
