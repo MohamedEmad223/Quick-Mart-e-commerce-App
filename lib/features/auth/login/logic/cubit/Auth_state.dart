@@ -22,9 +22,9 @@ final class LoginError extends AuthState {
 final class SignUpLoading extends AuthState {}
 
 final class SignUpSuccess extends AuthState {
-  final LoginModel? loginModel;
+  final SignUpModel? signUpModel;
 
-  SignUpSuccess({this.loginModel});
+  SignUpSuccess({this.signUpModel});
 }
 
 final class SignUpError extends AuthState {

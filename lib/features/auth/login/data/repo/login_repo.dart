@@ -5,9 +5,9 @@ import 'package:quick_mart/core/error/api/exceptions/api_exceptions.dart';
 import 'package:quick_mart/core/network/api_services.dart';
 import 'package:quick_mart/features/auth/login/data/model/login_model.dart';
 
-class AuthRepo {
+class LoginRepo {
   final ApiServices _apiServices;
-  AuthRepo(this._apiServices);
+  LoginRepo(this._apiServices);
 
   Future<Either<String, LoginModel>> login(
     String path,
