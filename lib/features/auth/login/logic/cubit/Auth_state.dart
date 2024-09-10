@@ -18,3 +18,17 @@ final class LoginError extends AuthState {
 
   LoginError({this.message});
 }
+
+final class SignUpLoading extends AuthState {}
+
+final class SignUpSuccess extends AuthState {
+  final LoginModel? loginModel;
+
+  SignUpSuccess({this.loginModel});
+}
+
+final class SignUpError extends AuthState {
+  final String? message;
+
+  SignUpError({this.message});
+}
