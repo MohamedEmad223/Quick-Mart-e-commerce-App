@@ -27,6 +27,16 @@ class _BodyOfSignupScreenState extends State<BodyOfSignupScreen> {
   }
 
   @override
+  void dispose() {
+    authCubit.emailSignUpController.dispose();
+    authCubit.passwordSignUpController.dispose();
+    authCubit.phoneNumberSignUpController.dispose();
+    authCubit.nameController.dispose();
+    authCubit.confirmPasswordSignUpController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,7 +87,7 @@ class _BodyOfSignupScreenState extends State<BodyOfSignupScreen> {
         ),
         SizedBox(height: 10.h),
         CustomTextFormFeild(
-          controller: authCubit.passwordSignUpController,
+          controller: authCubit.confirmPasswordSignUpController,
           isObscureText: _isObscureConfirm,
           kyTyp: TextInputType.visiblePassword,
           hintText: 'Enter your Password',
