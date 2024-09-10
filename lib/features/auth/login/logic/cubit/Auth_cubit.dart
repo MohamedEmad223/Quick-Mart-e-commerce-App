@@ -10,15 +10,15 @@ import '../../data/repo/sign_up_repo.dart';
 part 'Auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
-  AuthCubit(this._loginRepo,this._signUpRepo) : super(AuthInitial());
+  AuthCubit(this._loginRepo, this._signUpRepo) : super(AuthInitial());
 
-   final LoginRepo _loginRepo;
+  final LoginRepo _loginRepo;
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  Future<void> login(String path, Map<String,dynamic> data) async {
+  Future<void> login(String path, Map<String, dynamic> data) async {
     emit(LoginLoading());
     final result = await _loginRepo.login(path, data);
     result.fold(
@@ -27,9 +27,19 @@ class AuthCubit extends Cubit<AuthState> {
     );
   }
 
-   final SignUpRepo _signUpRepo;
+  /////////////////////////// SignUp ///////////////////////////
 
-  Future<void> signUp(String path, Map<String,dynamic> data) async {
+  final SignUpRepo _signUpRepo;
+
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailSignUpController = TextEditingController();
+  final TextEditingController passwordSignUpController =
+      TextEditingController();
+  final TextEditingController confirmPasswordSignUpController =
+      TextEditingController();
+  final TextEditingController phoneNumberSignUpController =
+      TextEditingController();
+  Future<void> signUp(String path, Map<String, dynamic> data) async {
     emit(SignUpLoading());
     final result = await _signUpRepo.signUp(path, data);
     result.fold(
@@ -37,5 +47,4 @@ class AuthCubit extends Cubit<AuthState> {
       (success) => emit(SignUpSuccess(signUpModel: success)),
     );
   }
-
 }
