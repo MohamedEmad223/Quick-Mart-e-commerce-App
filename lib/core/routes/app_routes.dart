@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart/core/network/dio_handler.dart';
 import 'package:quick_mart/core/routes/routes.dart';
 import 'package:quick_mart/features/auth/forget_password/views/screens/success_screen.dart';
+import 'package:quick_mart/features/auth/login/data/repo/sign_up_repo.dart';
 import 'package:quick_mart/features/auth/login/views/screens/log_in_screen.dart';
 import 'package:quick_mart/features/on_boarding/view/screen/on_boarding_screen.dart';
 
@@ -24,7 +25,10 @@ class AppRoutes {
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
                   create: (context) => AuthCubit(
-                    AuthRepo(
+                    LoginRepo(
+                      DioHandler(),
+                    ),
+                    SignUpRepo(
                       DioHandler(),
                     ),
                   ),
@@ -34,7 +38,10 @@ class AppRoutes {
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
                   create: (context) => AuthCubit(
-                    AuthRepo(
+                    LoginRepo(
+                      DioHandler(),
+                    ),
+                    SignUpRepo(
                       DioHandler(),
                     ),
                   ),
