@@ -5,7 +5,7 @@ import 'package:meta/meta.dart';
 import '../../data/model/login_model.dart';
 import '../../data/repo/login_repo.dart';
 
-part 'login_state.dart';
+part 'Auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit(this._loginRepo) : super(AuthInitial());

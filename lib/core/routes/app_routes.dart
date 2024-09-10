@@ -7,7 +7,7 @@ import 'package:quick_mart/features/auth/login/views/screens/log_in_screen.dart'
 import 'package:quick_mart/features/on_boarding/view/screen/on_boarding_screen.dart';
 
 import '../../features/auth/login/data/repo/login_repo.dart';
-import '../../features/auth/login/logic/cubit/login_cubit.dart';
+import '../../features/auth/login/logic/cubit/Auth_cubit.dart';
 import '../../features/auth/sign_up/views/screens/sign_up_screen.dart';
 import '../../features/home/home_screen.dart';
 import '../../features/splash/screens/splash_screen.dart';

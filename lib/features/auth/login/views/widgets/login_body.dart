@@ -7,7 +7,7 @@ import 'package:quick_mart/core/constants/app_constants.dart';
 import 'package:quick_mart/core/helpers/helper_methods.dart';
 import 'package:quick_mart/core/routes/routes.dart';
 import 'package:quick_mart/core/widgets/custom_text_form_feild.dart';
-import 'package:quick_mart/features/auth/login/logic/cubit/login_cubit.dart';
+import 'package:quick_mart/features/auth/login/logic/cubit/Auth_cubit.dart';
 import 'package:quick_mart/features/auth/login/views/widgets/lable_text.dart';
 
 import '../../../../../core/theming/app_colors.dart';
