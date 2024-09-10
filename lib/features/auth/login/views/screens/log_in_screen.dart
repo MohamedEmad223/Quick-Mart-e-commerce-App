@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_mart/features/auth/sign_up/views/screens/sign_up_screen.dart';
+import '../../../../../core/routes/routes.dart';
 import '../../../../../core/widgets/head_of_screen_of_auth_widgets.dart';
 import '../widgets/login_body.dart';
 import '../widgets/term_text.dart';
@@ -18,11 +19,11 @@ class LogInScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // const HeadOfScreenOfAuthWidgets(
-              //   textOne: 'Log In',
-              //   textTwo: 'Sign up',
-              //   screen: SignUpScreen(),
-              // ),
+               HeadOfScreenOfAuthWidgets(
+                textOne: 'Log In',
+                textTwo: 'Sign up',
+                screen: Routes.signUp,
+              ),
               SizedBox(height: 40.h),
               const LoginBody(),
               SizedBox(height: 50.h),

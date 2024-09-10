@@ -7,10 +7,10 @@ import '../../data/repo/login_repo.dart';
 
 part 'login_state.dart';
 
-class LoginCubit extends Cubit<LoginState> {
-  LoginCubit(this._loginRepo) : super(LoginInitial());
+class AuthCubit extends Cubit<AuthState> {
+  AuthCubit(this._loginRepo) : super(AuthInitial());
 
-  late final LoginRepo _loginRepo;
+  late final AuthRepo _loginRepo;
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
