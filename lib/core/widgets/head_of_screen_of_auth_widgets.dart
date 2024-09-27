@@ -14,7 +14,7 @@ class HeadOfScreenOfAuthWidgets extends StatelessWidget {
       required this.screen});
   final String textOne;
   final String textTwo;
-  final Widget screen;
+  final String  screen;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class HeadOfScreenOfAuthWidgets extends StatelessWidget {
         ),
         DoNotHaveAnAccount(
           text: textTwo,
-          screen: screen,
+          routeName: screen,
         )
       ],
     );

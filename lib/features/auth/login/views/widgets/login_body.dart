@@ -7,7 +7,7 @@ import 'package:quick_mart/core/constants/app_constants.dart';
 import 'package:quick_mart/core/helpers/helper_methods.dart';
 import 'package:quick_mart/core/routes/routes.dart';
 import 'package:quick_mart/core/widgets/custom_text_form_feild.dart';
-import 'package:quick_mart/features/auth/login/logic/cubit/login_cubit.dart';
+import 'package:quick_mart/features/auth/login/logic/cubit/Auth_cubit.dart';
 import 'package:quick_mart/features/auth/login/views/widgets/lable_text.dart';
 
 import '../../../../../core/theming/app_colors.dart';
@@ -23,10 +23,26 @@ class LoginBody extends StatefulWidget {
 
 class _LoginBodyState extends State<LoginBody> {
   bool _isObscure = true;
+  late AuthCubit logincubit;
+
+  @override
+  void initState() {
+    logincubit = BlocProvider.of<AuthCubit>(context);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    logincubit.emailController.dispose();
+    logincubit.passwordController.dispose();
+    logincubit.close();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-    return BlocListener<LoginCubit, LoginState>(
+    return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is LoginError) {
           HelperMethods.showCustomSnackBarError(context, state.message!);
@@ -51,7 +67,7 @@ class _LoginBodyState extends State<LoginBody> {
             ),
             SizedBox(height: 20.h),
             CustomTextFormFeild(
-              controller: context.read<LoginCubit>().emailController,
+              controller: logincubit.emailController,
               kyTyp: TextInputType.emailAddress,
               hintText: 'Enter your email',
               validator: (value) {
@@ -70,7 +86,7 @@ class _LoginBodyState extends State<LoginBody> {
             ),
             SizedBox(height: 20.h),
             CustomTextFormFeild(
-              controller: context.read<LoginCubit>().passwordController,
+              controller: logincubit.passwordController,
               kyTyp: TextInputType.visiblePassword,
               validator: (value) {
                 if (value!.isEmpty) {
@@ -102,12 +118,9 @@ class _LoginBodyState extends State<LoginBody> {
               buttonText: 'Login',
               buttonAction: () async {
                 if (formKey.currentState!.validate()) {
-                  await context
-                      .read<LoginCubit>()
-                      .login(AppConstants.loginPath, {
-                    'email': context.read<LoginCubit>().emailController.text,
-                    'password':
-                        context.read<LoginCubit>().passwordController.text,
+                  await logincubit.login(AppConstants.loginPath, {
+                    'email': logincubit.emailController.text,
+                    'password': logincubit.passwordController.text,
                   });
                 }
               },
