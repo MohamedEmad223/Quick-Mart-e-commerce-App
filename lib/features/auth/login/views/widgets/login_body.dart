@@ -24,7 +24,7 @@ class LoginBody extends StatefulWidget {
 class _LoginBodyState extends State<LoginBody> {
   bool _isObscure = true;
   late AuthCubit logincubit;
-  
+
   @override
   void initState() {
     logincubit = BlocProvider.of<AuthCubit>(context);
@@ -35,7 +35,7 @@ class _LoginBodyState extends State<LoginBody> {
   void dispose() {
     logincubit.emailController.dispose();
     logincubit.passwordController.dispose();
-
+    logincubit.close();
     super.dispose();
   }
 

@@ -16,23 +16,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         body: SafeArea(
             child: Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 20.h),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const HeadOfScreenOfAuthWidgets(
-              textOne: 'Sign up',
-              textTwo: 'Log In',
-              screen: Routes.logIn,
+          padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 20.h),
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const HeadOfScreenOfAuthWidgets(
+                  textOne: 'Sign up',
+                  textTwo: 'Log In',
+                  screen: Routes.logIn,
+                ),
+                SizedBox(height: 30.h),
+                const BodyOfSignupScreen()
+              ],
             ),
-            SizedBox(height: 30.h),
-            const BodyOfSignupScreen()
-          ],
-        ),
-      ),
-    )));
+          ),
+        )));
   }
 }
