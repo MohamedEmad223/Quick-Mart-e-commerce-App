@@ -111,7 +111,15 @@ class _LoginBodyState extends State<LoginBody> {
               ),
             ),
             SizedBox(height: 20.h),
-             const ForgetPassword(),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.forgetPassword);
+              },
+              child: Text(
+                'Forget Password?',
+                style: AppTextStyle.plusJakartaSans16BoldMainColor,
+              ),
+            ),
             SizedBox(height: 25.h),
             CustomButton(
               height: 50.h,
