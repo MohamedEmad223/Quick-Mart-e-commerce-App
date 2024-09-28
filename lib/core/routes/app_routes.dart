@@ -10,6 +10,7 @@ import 'package:quick_mart/features/on_boarding/view/screen/on_boarding_screen.d
 
 import '../../features/auth/forget_password/data/repo/forget_password_repo.dart';
 import '../../features/auth/forget_password/views/screens/email_verfication.dart';
+import '../../features/auth/forget_password/views/screens/send_code_screen.dart';
 import '../../features/auth/sign_in/sign_up/data/repo/login_repo.dart';
 import '../../features/auth/sign_in/sign_up/logic/cubit/Auth_cubit.dart';
 import '../../features/auth/sign_in/sign_up/views/screens/sign_up_screen.dart';
@@ -60,6 +61,10 @@ class AppRoutes {
                   ),
                   child: const ForgetPasswordScreen(),
                 ));
+      case Routes.sendCodeScreen:
+        return MaterialPageRoute(
+            builder: (context) => const SendCodeScreen(),
+          );
       case Routes.home:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
       case Routes.success:
