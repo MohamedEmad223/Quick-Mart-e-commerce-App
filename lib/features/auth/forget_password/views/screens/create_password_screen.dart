@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_mart/core/routes/routes.dart';
 import 'package:quick_mart/core/theming/app_colors.dart';
+import 'package:quick_mart/features/auth/forget_password/logic/forget_password/cubit/forgetpassword_cubit.dart';
 import 'package:quick_mart/features/auth/forget_password/views/widgets/head_of_forget_password_widgets.dart';
 
 import '../../../../../core/theming/app_text_style.dart';
@@ -17,11 +19,22 @@ class CreatePasswordScreen extends StatefulWidget {
 }
 
 class _CreatePasswordScreenState extends State<CreatePasswordScreen> {
-  bool _isObscureone = true;
-  bool _isObscuretwo = true;
-  final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController =
-      TextEditingController();
+  bool _isObscure = true;
+  late ForgetpasswordCubit createPasswordCubit;
+  @override
+  void initState() {
+    createPasswordCubit = BlocProvider.of<ForgetpasswordCubit>(context);
+    super.initState();
+  }
+
+  @override
+  void dispose() { 
+    super.dispose();
+    createPasswordCubit.passwordController.dispose();
+    createPasswordCubit.confirmPasswordController.dispose();
+    createPasswordCubit.close();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,23 +50,12 @@ class _CreatePasswordScreenState extends State<CreatePasswordScreen> {
                   textTwo: 'Enter your new password and remember it.'),
               SizedBox(height: 20.h),
               const LableText(
-                lableText: 'Password',
+                lableText: 'Email',
               ),
               SizedBox(height: 20.h),
               CustomTextFormFeild(
-                isObscureText: _isObscureone,
-                hintText: 'Enter your Password',
-                suffixIcon: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      _isObscureone = !_isObscureone;
-                    });
-                  },
-                  child: _isObscureone
-                      ? const Icon(Icons.visibility_off)
-                      : const Icon(Icons.visibility),
-                ),
-                controller: _passwordController,
+                hintText: 'Enter your Email',
+                controller: createPasswordCubit.passwordController,
               ),
               SizedBox(height: 20.h),
               const LableText(
@@ -61,19 +63,19 @@ class _CreatePasswordScreenState extends State<CreatePasswordScreen> {
               ),
               SizedBox(height: 20.h),
               CustomTextFormFeild(
-                isObscureText: _isObscuretwo,
+                isObscureText: _isObscure,
                 hintText: 'Enter your Confirm Password',
                 suffixIcon: GestureDetector(
                   onTap: () {
                     setState(() {
-                      _isObscuretwo = !_isObscuretwo;
+                      _isObscure = !_isObscure;
                     });
                   },
-                  child: _isObscuretwo
+                  child: _isObscure
                       ? const Icon(Icons.visibility_off)
                       : const Icon(Icons.visibility),
                 ),
-                controller: _confirmPasswordController,
+                controller: createPasswordCubit.confirmPasswordController,
               ),
               SizedBox(height: 40.h),
               CustomButton(

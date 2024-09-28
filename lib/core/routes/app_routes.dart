@@ -89,7 +89,20 @@ class AppRoutes {
         );
       case Routes.createPasswordScreen:
         return MaterialPageRoute(
-          builder: (context) => const CreatePasswordScreen(),
+          builder: (context) => BlocProvider(
+            create: (context) => ForgetpasswordCubit(
+              ForgetPasswordRepo(
+                DioHandler(),
+              ),
+              VerifyCodeRepo(
+                DioHandler(),
+              ),
+              ResetPasswordRepo(
+                DioHandler(),
+              ),
+            ),
+            child: const CreatePasswordScreen(),
+          ),
         );
       case Routes.home:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
