@@ -55,10 +55,10 @@ class _SendCodeScreenState extends State<SendCodeScreen> {
         }
       },
       child: Scaffold(
-        appBar: AppBar(),
+        
         body: SafeArea(
             child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 20.h),
+          padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 70.h),
           child: Form(
             key: formKey,
             child: Column(

@@ -1,6 +1,5 @@
 part of 'forgetpassword_cubit.dart';
 
-
 sealed class ForgetpasswordState {}
 
 final class ForgetpasswordInitial extends ForgetpasswordState {}
@@ -35,3 +34,18 @@ final class VerifycodeError extends ForgetpasswordState {
   VerifycodeError({this.message});
 }
 
+final class CreatePasswordInitial extends ForgetpasswordState {}
+
+final class CreatePasswordLoading extends ForgetpasswordState {}
+
+final class CreatePasswordSuccess extends ForgetpasswordState {
+  final ResetPasswordModel? resetPasswordModel;
+
+  CreatePasswordSuccess({this.resetPasswordModel});
+}
+
+final class CreatePasswordError extends ForgetpasswordState {
+  final String? message;
+
+  CreatePasswordError({this.message});
+}

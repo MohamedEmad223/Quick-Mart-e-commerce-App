@@ -40,7 +40,6 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
     return Scaffold(
-      appBar: AppBar(),
       body: BlocListener<ForgetpasswordCubit, ForgetpasswordState>(
         listener: (context, state) {
           if (state is ForgetpasswordError) {
@@ -62,7 +61,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
         },
         child: SafeArea(
             child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 20.h),
+          padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 70.h),
           child: Form(
             key: formKey,
             child: Column(
