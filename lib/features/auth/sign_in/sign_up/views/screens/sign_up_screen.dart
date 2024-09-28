@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_mart/core/widgets/head_of_screen_of_auth_widgets.dart';
 
-import '../../../../../core/routes/routes.dart';
+import '../../../../../../core/routes/routes.dart';
 import '../widgets/body_of_signup_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
