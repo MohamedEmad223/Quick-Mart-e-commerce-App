@@ -40,8 +40,8 @@ class ForgetpasswordCubit extends Cubit<ForgetpasswordState> {
     );
   }
 
-  final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController =
+  final TextEditingController resetemailController = TextEditingController();
+  final TextEditingController resetPasswordController =
       TextEditingController();
 
   final ResetPasswordRepo _resetPasswordRepo;
