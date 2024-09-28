@@ -20,73 +20,75 @@ class _CreatePasswordScreenState extends State<CreatePasswordScreen> {
   bool _isObscureone = true;
   bool _isObscuretwo = true;
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: SafeArea(
-          child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 20.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const HeadOfForgetPasswordWidgets(
-                textOne: 'New Password',
-                textTwo: 'Enter your new password and remember it.'),
-            SizedBox(height: 20.h),
-            const LableText(
-              lableText: 'Password',
-            ),
-            SizedBox(height: 20.h),
-            CustomTextFormFeild(
-              isObscureText: _isObscureone,
-              hintText: 'Enter your Password',
-              suffixIcon: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _isObscureone = !_isObscureone;
-                  });
-                },
-                child: _isObscureone
-                    ? const Icon(Icons.visibility_off)
-                    : const Icon(Icons.visibility),
+      body: SingleChildScrollView(
+        child: SafeArea(
+            child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 70.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const HeadOfForgetPasswordWidgets(
+                  textOne: 'New Password',
+                  textTwo: 'Enter your new password and remember it.'),
+              SizedBox(height: 20.h),
+              const LableText(
+                lableText: 'Password',
               ),
-              controller: _passwordController,
-            ),
-            SizedBox(height: 20.h),
-            const LableText(
-              lableText: 'Confirm Password',
-            ),
-            SizedBox(height: 20.h),
-            CustomTextFormFeild(
-              isObscureText: _isObscuretwo,
-              hintText: 'Enter your Confirm Password',
-              suffixIcon: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _isObscuretwo = !_isObscuretwo;
-                  });
-                },
-                child: _isObscuretwo
-                    ? const Icon(Icons.visibility_off)
-                    : const Icon(Icons.visibility),
+              SizedBox(height: 20.h),
+              CustomTextFormFeild(
+                isObscureText: _isObscureone,
+                hintText: 'Enter your Password',
+                suffixIcon: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _isObscureone = !_isObscureone;
+                    });
+                  },
+                  child: _isObscureone
+                      ? const Icon(Icons.visibility_off)
+                      : const Icon(Icons.visibility),
+                ),
+                controller: _passwordController,
               ),
-              controller: _confirmPasswordController,
-            ),
-            SizedBox(height: 40.h),
-            CustomButton(
-              buttonStyle: AppTextStyle.plusJakartaSans16BoldWhite,
-              height: 50.h,
-              color: AppColors.blackColor,
-              buttonText: 'Save',
-              buttonAction: () {
-                Navigator.pushReplacementNamed(context, Routes.success);
-              },
-            ),
-          ],
-        ),
-      )),
+              SizedBox(height: 20.h),
+              const LableText(
+                lableText: 'Confirm Password',
+              ),
+              SizedBox(height: 20.h),
+              CustomTextFormFeild(
+                isObscureText: _isObscuretwo,
+                hintText: 'Enter your Confirm Password',
+                suffixIcon: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _isObscuretwo = !_isObscuretwo;
+                    });
+                  },
+                  child: _isObscuretwo
+                      ? const Icon(Icons.visibility_off)
+                      : const Icon(Icons.visibility),
+                ),
+                controller: _confirmPasswordController,
+              ),
+              SizedBox(height: 40.h),
+              CustomButton(
+                buttonStyle: AppTextStyle.plusJakartaSans16BoldWhite,
+                height: 50.h,
+                color: AppColors.blackColor,
+                buttonText: 'Save',
+                buttonAction: () {
+                  Navigator.pushReplacementNamed(context, Routes.success);
+                },
+              ),
+            ],
+          ),
+        )),
+      ),
     );
   }
 }
