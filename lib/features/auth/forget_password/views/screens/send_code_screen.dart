@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
 import 'package:quick_mart/core/constants/app_constants.dart';
+import 'package:quick_mart/core/routes/routes.dart';
 import 'package:quick_mart/core/theming/app_colors.dart';
 import 'package:quick_mart/features/auth/forget_password/logic/forget_password/cubit/forgetpassword_cubit.dart';
-import 'package:quick_mart/features/auth/forget_password/views/screens/create_password_screen.dart';
 import 'package:quick_mart/features/auth/forget_password/views/widgets/head_of_forget_password_widgets.dart';
 
 import '../../../../../core/helpers/helper_methods.dart';
@@ -21,17 +21,17 @@ class SendCodeScreen extends StatefulWidget {
 }
 
 class _SendCodeScreenState extends State<SendCodeScreen> {
-  late ForgetpasswordCubit forgetpasswordCubit;
+  late ForgetpasswordCubit sendCodeCubit;
   @override
   void initState() {
-    forgetpasswordCubit = BlocProvider.of<ForgetpasswordCubit>(context);
+    sendCodeCubit = BlocProvider.of<ForgetpasswordCubit>(context);
     super.initState();
   }
 
   @override
   void dispose() {
-    forgetpasswordCubit.codeController.dispose();
-    forgetpasswordCubit.close();
+    sendCodeCubit.codeController.dispose();
+    sendCodeCubit.close();
     super.dispose();
   }
 
@@ -49,11 +49,7 @@ class _SendCodeScreenState extends State<SendCodeScreen> {
         }
         if (state is VerifycodeSuccess) {
           Navigator.pop(context);
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const CreatePasswordScreen(),
-              ));
+          Navigator.pushNamed(context, Routes.createPasswordScreen);
           HelperMethods.showCustomSnackBarSuccess(
               context, 'Verify Code Success');
         }
@@ -78,7 +74,7 @@ class _SendCodeScreenState extends State<SendCodeScreen> {
                   obscuringCharacter: '•',
                   defaultPinTheme: defaultPinTheme,
                   autofocus: true,
-                  controller: forgetpasswordCubit.codeController,
+                  controller: sendCodeCubit.codeController,
                   focusedPinTheme: defaultPinTheme.copyWith(
                     decoration: defaultPinTheme.decoration?.copyWith(
                       border: Border.all(
@@ -90,9 +86,9 @@ class _SendCodeScreenState extends State<SendCodeScreen> {
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter the code';
-                    }else if(value.length < 6){
+                    } else if (value.length < 6) {
                       return 'Please enter the correct code';
-                    }else if(value.contains(RegExp(r'[a-zA-Z]'))){
+                    } else if (value.contains(RegExp(r'[a-zA-Z]'))) {
                       return 'Please enter the correct code';
                     }
                     return null;
@@ -106,8 +102,8 @@ class _SendCodeScreenState extends State<SendCodeScreen> {
                   showCursor: true,
                   onCompleted: (pin) async {
                     if (formKey.currentState!.validate()) {
-                      forgetpasswordCubit.verifyCode(AppConstants.verifyCodePath, {
-                        "resetCode": forgetpasswordCubit.codeController.text,
+                      sendCodeCubit.verifyCode(AppConstants.verifyCodePath, {
+                        "resetCode": sendCodeCubit.codeController.text,
                       });
                     }
                   },
@@ -123,8 +119,8 @@ class _SendCodeScreenState extends State<SendCodeScreen> {
                   buttonText: 'Verify',
                   buttonAction: () {
                     if (formKey.currentState!.validate()) {
-                      forgetpasswordCubit.verifyCode(AppConstants.verifyCodePath, {
-                        "resetCode": forgetpasswordCubit.codeController.text,
+                      sendCodeCubit.verifyCode(AppConstants.verifyCodePath, {
+                        "resetCode": sendCodeCubit.codeController.text,
                       });
                     }
                   },

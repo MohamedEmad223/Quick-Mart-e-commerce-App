@@ -8,4 +8,5 @@ class Routes {
   static const success = '/success';
   static const forgetPassword = '/forgetPassword';
   static const sendCodeScreen = '/sendCodeScreen';
+  static const createPasswordScreen = '/createPasswordScreen';
 }
