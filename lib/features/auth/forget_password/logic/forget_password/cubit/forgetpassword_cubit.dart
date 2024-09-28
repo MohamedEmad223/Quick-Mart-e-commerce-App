@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart/features/auth/forget_password/data/repo/forget_password_repo.dart';
 
@@ -7,6 +8,7 @@ part 'forgetpassword_state.dart';
 
 class ForgetpasswordCubit extends Cubit<ForgetpasswordState> {
   ForgetpasswordCubit(this._forgetPasswordRepo) : super(ForgetpasswordInitial());
+final TextEditingController emailController = TextEditingController();
 
  final ForgetPasswordRepo _forgetPasswordRepo;
 
