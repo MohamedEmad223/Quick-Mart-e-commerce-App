@@ -5,4 +5,5 @@ class Routes {
   static const signUp = '/signUp';
   static const home = '/home';
   static const success = '/success';
+  static const forgetPassword = '/forgetPassword';
 }

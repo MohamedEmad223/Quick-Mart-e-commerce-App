@@ -7,12 +7,12 @@ import 'package:quick_mart/core/constants/app_constants.dart';
 import 'package:quick_mart/core/helpers/helper_methods.dart';
 import 'package:quick_mart/core/routes/routes.dart';
 import 'package:quick_mart/core/widgets/custom_text_form_feild.dart';
-import 'package:quick_mart/features/auth/login/logic/cubit/Auth_cubit.dart';
-import 'package:quick_mart/features/auth/login/views/widgets/lable_text.dart';
+import 'package:quick_mart/features/auth/sign_in/sign_up/logic/cubit/Auth_cubit.dart';
+import 'package:quick_mart/features/auth/sign_in/sign_up/views/widgets/lable_text.dart';
 
-import '../../../../../core/theming/app_colors.dart';
-import '../../../../../core/theming/app_text_style.dart';
-import '../../../../../core/widgets/custom_button.dart';
+import '../../../../../../core/theming/app_colors.dart';
+import '../../../../../../core/theming/app_text_style.dart';
+import '../../../../../../core/widgets/custom_button.dart';
 
 class LoginBody extends StatefulWidget {
   const LoginBody({super.key});
@@ -111,7 +111,15 @@ class _LoginBodyState extends State<LoginBody> {
               ),
             ),
             SizedBox(height: 20.h),
-            // const ForgetPassword(),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.forgetPassword);
+              },
+              child: Text(
+                'Forget Password?',
+                style: AppTextStyle.plusJakartaSans16BoldMainColor,
+              ),
+            ),
             SizedBox(height: 25.h),
             CustomButton(
               height: 50.h,

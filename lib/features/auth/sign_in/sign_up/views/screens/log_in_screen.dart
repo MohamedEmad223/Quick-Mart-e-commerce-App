@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../core/routes/routes.dart';
-import '../../../../../core/widgets/head_of_screen_of_auth_widgets.dart';
+import '../../../../../../core/routes/routes.dart';
+import '../../../../../../core/widgets/head_of_screen_of_auth_widgets.dart';
 import '../widgets/login_body.dart';
 import '../widgets/term_text.dart';
 

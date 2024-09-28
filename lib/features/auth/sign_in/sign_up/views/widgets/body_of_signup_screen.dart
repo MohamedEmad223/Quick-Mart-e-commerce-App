@@ -3,12 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_mart/core/constants/app_constants.dart';
 
-import '../../../../../core/helpers/helper_methods.dart';
-import '../../../../../core/routes/routes.dart';
-import '../../../../../core/theming/app_colors.dart';
-import '../../../../../core/theming/app_text_style.dart';
-import '../../../../../core/widgets/custom_button.dart';
-import '../../../../../core/widgets/custom_text_form_feild.dart';
+import '../../../../../../core/helpers/helper_methods.dart';
+import '../../../../../../core/routes/routes.dart';
+import '../../../../../../core/theming/app_colors.dart';
+import '../../../../../../core/theming/app_text_style.dart';
+import '../../../../../../core/widgets/custom_button.dart';
+import '../../../../../../core/widgets/custom_text_form_feild.dart';
 import '../../logic/cubit/Auth_cubit.dart';
 import 'lable_text.dart';
 
