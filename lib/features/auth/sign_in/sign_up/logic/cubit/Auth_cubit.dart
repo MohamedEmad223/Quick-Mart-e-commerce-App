@@ -1,6 +1,7 @@
-import 'package:bloc/bloc.dart';
+
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
+
 import 'package:quick_mart/features/auth/sign_in/sign_up/data/model/sign_up_model.dart';
 
 import '../../data/model/login_model.dart';
