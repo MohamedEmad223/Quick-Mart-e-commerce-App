@@ -29,6 +29,13 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   }
 
   @override
+  void dispose() {
+    forgetpasswordCubit.emailController.dispose();
+    forgetpasswordCubit.close();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
@@ -78,9 +85,9 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter your email';
-                    }else if (!value.contains('@')) {
+                    } else if (!value.contains('@')) {
                       return 'Please enter a valid email';
-                    }else if (!value.contains('.')) {
+                    } else if (!value.contains('.')) {
                       return 'Please enter a valid email';
                     }
                     return null;
@@ -92,8 +99,9 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   buttonText: 'send',
                   buttonAction: () {
                     if (formKey.currentState!.validate()) {
-                      forgetpasswordCubit.forgetPassword(AppConstants.forgetPasswordPath, {
-                        'email':forgetpasswordCubit.emailController.text,
+                      forgetpasswordCubit
+                          .forgetPassword(AppConstants.forgetPasswordPath, {
+                        'email': forgetpasswordCubit.emailController.text,
                       });
                     }
                   },
