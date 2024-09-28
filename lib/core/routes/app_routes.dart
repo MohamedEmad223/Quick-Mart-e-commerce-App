@@ -9,6 +9,7 @@ import 'package:quick_mart/features/auth/sign_in/sign_up/views/screens/log_in_sc
 import 'package:quick_mart/features/on_boarding/view/screen/on_boarding_screen.dart';
 
 import '../../features/auth/forget_password/data/repo/forget_password_repo.dart';
+import '../../features/auth/forget_password/data/repo/reset_password_repo.dart';
 import '../../features/auth/forget_password/data/repo/verify_code_repo.dart';
 import '../../features/auth/forget_password/views/screens/create_password_screen.dart';
 import '../../features/auth/forget_password/views/screens/email_verfication.dart';
@@ -63,6 +64,9 @@ class AppRoutes {
                     VerifyCodeRepo(
                       DioHandler(),
                     ),
+                    ResetPasswordRepo(
+                      DioHandler(),
+                    ),
                   ),
                   child: const ForgetPasswordScreen(),
                 ));
@@ -74,6 +78,9 @@ class AppRoutes {
                 DioHandler(),
               ),
               VerifyCodeRepo(
+                DioHandler(),
+              ),
+              ResetPasswordRepo(
                 DioHandler(),
               ),
             ),
