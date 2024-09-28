@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart/core/network/dio_handler.dart';
 import 'package:quick_mart/core/routes/routes.dart';
+import 'package:quick_mart/features/auth/forget_password/logic/forget_password/cubit/forgetpassword_cubit.dart';
 import 'package:quick_mart/features/auth/forget_password/views/screens/success_screen.dart';
 import 'package:quick_mart/features/auth/sign_in/sign_up/data/repo/sign_up_repo.dart';
 import 'package:quick_mart/features/auth/sign_in/sign_up/views/screens/log_in_screen.dart';
 import 'package:quick_mart/features/on_boarding/view/screen/on_boarding_screen.dart';
 
+import '../../features/auth/forget_password/data/repo/forget_password_repo.dart';
 import '../../features/auth/forget_password/views/screens/email_verfication.dart';
 import '../../features/auth/sign_in/sign_up/data/repo/login_repo.dart';
 import '../../features/auth/sign_in/sign_up/logic/cubit/Auth_cubit.dart';
@@ -50,7 +52,14 @@ class AppRoutes {
                 ));
       case Routes.forgetPassword:
         return MaterialPageRoute(
-            builder: (context) => const EmailConfirmation());
+            builder: (context) => BlocProvider(
+                  create: (context) => ForgetpasswordCubit(
+                    ForgetPasswordRepo(
+                      DioHandler(),
+                    ),
+                  ),
+                  child: const ForgetPasswordScreen(),
+                ));
       case Routes.home:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
       case Routes.success:
