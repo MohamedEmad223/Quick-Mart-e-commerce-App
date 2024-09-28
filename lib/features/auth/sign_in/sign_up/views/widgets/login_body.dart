@@ -111,7 +111,7 @@ class _LoginBodyState extends State<LoginBody> {
               ),
             ),
             SizedBox(height: 20.h),
-            // const ForgetPassword(),
+             const ForgetPassword(),
             SizedBox(height: 25.h),
             CustomButton(
               height: 50.h,
