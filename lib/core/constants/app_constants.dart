@@ -3,4 +3,5 @@ class AppConstants {
   static const String loginPath = 'auth/signin';
   static const String signUpPath = 'auth/signup';
   static const String forgetPasswordPath = 'auth/forgotPasswords';
+  static const String verifyCodePath = 'auth/verifyResetCode';
 }

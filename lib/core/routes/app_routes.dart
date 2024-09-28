@@ -10,7 +10,6 @@ import 'package:quick_mart/features/on_boarding/view/screen/on_boarding_screen.d
 
 import '../../features/auth/forget_password/data/repo/forget_password_repo.dart';
 import '../../features/auth/forget_password/data/repo/verify_code_repo.dart';
-import '../../features/auth/forget_password/logic/code_verfication/cubit/verifycode_cubit.dart';
 import '../../features/auth/forget_password/views/screens/email_verfication.dart';
 import '../../features/auth/forget_password/views/screens/send_code_screen.dart';
 import '../../features/auth/sign_in/sign_up/data/repo/login_repo.dart';
@@ -60,13 +59,19 @@ class AppRoutes {
                     ForgetPasswordRepo(
                       DioHandler(),
                     ),
+                    VerifyCodeRepo(
+                      DioHandler(),
+                    ),
                   ),
                   child: const ForgetPasswordScreen(),
                 ));
       case Routes.sendCodeScreen:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
-            create: (context) => VerifycodeCubit(
+            create: (context) => ForgetpasswordCubit(
+              ForgetPasswordRepo(
+                DioHandler(),
+              ),
               VerifyCodeRepo(
                 DioHandler(),
               ),

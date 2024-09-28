@@ -52,11 +52,12 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
           }
           if (state is ForgetpasswordSuccess) {
             Navigator.pop(context);
-            Navigator.push(
+            Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const SendCodeScreen(),
-                ));
+                ),
+                (route) => false);
             HelperMethods.showCustomSnackBarSuccess(
                 context, 'Email Confirmation Success');
           }
