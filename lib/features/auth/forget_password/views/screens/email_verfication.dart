@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quick_mart/core/constants/app_constants.dart';
 import 'package:quick_mart/features/auth/forget_password/logic/forget_password/cubit/forgetpassword_cubit.dart';
 import 'package:quick_mart/features/auth/forget_password/views/screens/send_code_screen.dart';
 
@@ -12,14 +13,14 @@ import '../../../../../core/widgets/custom_text_form_feild.dart';
 import '../../../sign_in/sign_up/views/widgets/lable_text.dart';
 import '../widgets/head_of_forget_password_widgets.dart';
 
-class EmailConfirmation extends StatefulWidget {
-  const EmailConfirmation({super.key});
+class ForgetPasswordScreen extends StatefulWidget {
+  const ForgetPasswordScreen({super.key});
 
   @override
-  State<EmailConfirmation> createState() => _EmailConfirmationState();
+  State<ForgetPasswordScreen> createState() => _ForgetPasswordScreenState();
 }
 
-class _EmailConfirmationState extends State<EmailConfirmation> {
+class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   late ForgetpasswordCubit forgetpasswordCubit;
   @override
   void initState() {
@@ -90,11 +91,11 @@ class _EmailConfirmationState extends State<EmailConfirmation> {
                   height: 50.h,
                   buttonText: 'send',
                   buttonAction: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const SendCodeScreen(),
-                        ));
+                    if (formKey.currentState!.validate()) {
+                      forgetpasswordCubit.forgetPassword(AppConstants.forgetPasswordPath, {
+                        'email':forgetpasswordCubit.emailController.text,
+                      });
+                    }
                   },
                   buttonStyle: AppTextStyle.plusJakartaSans16BoldWhite,
                   color: AppColors.blackColor,

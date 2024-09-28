@@ -58,7 +58,7 @@ class AppRoutes {
                       DioHandler(),
                     ),
                   ),
-                  child: const EmailConfirmation(),
+                  child: const ForgetPasswordScreen(),
                 ));
       case Routes.home:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
