@@ -1,3 +1,4 @@
+
 class Routes {
   static const splash = '/splash';
   static const onBoarding = '/onBoarding';
@@ -6,4 +7,6 @@ class Routes {
   static const home = '/home';
   static const success = '/success';
   static const forgetPassword = '/forgetPassword';
+  static const sendCodeScreen = '/sendCodeScreen';
+  static const createPasswordScreen = '/createPasswordScreen';
 }

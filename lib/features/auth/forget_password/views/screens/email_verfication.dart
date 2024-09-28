@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_mart/core/constants/app_constants.dart';
 import 'package:quick_mart/features/auth/forget_password/logic/forget_password/cubit/forgetpassword_cubit.dart';
-import 'package:quick_mart/features/auth/forget_password/views/screens/send_code_screen.dart';
 
 import '../../../../../core/helpers/helper_methods.dart';
+import '../../../../../core/routes/routes.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_text_style.dart';
 import '../../../../../core/widgets/custom_button.dart';
@@ -29,6 +29,13 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   }
 
   @override
+  void dispose() {
+    forgetpasswordCubit.emailController.dispose();
+    forgetpasswordCubit.close();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
@@ -45,11 +52,10 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
           }
           if (state is ForgetpasswordSuccess) {
             Navigator.pop(context);
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const SendCodeScreen(),
-                ));
+            Navigator.pushNamed(
+              context,
+              Routes.sendCodeScreen,
+            );
             HelperMethods.showCustomSnackBarSuccess(
                 context, 'Email Confirmation Success');
           }
@@ -78,9 +84,9 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter your email';
-                    }else if (!value.contains('@')) {
+                    } else if (!value.contains('@')) {
                       return 'Please enter a valid email';
-                    }else if (!value.contains('.')) {
+                    } else if (!value.contains('.')) {
                       return 'Please enter a valid email';
                     }
                     return null;
@@ -92,8 +98,9 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   buttonText: 'send',
                   buttonAction: () {
                     if (formKey.currentState!.validate()) {
-                      forgetpasswordCubit.forgetPassword(AppConstants.forgetPasswordPath, {
-                        'email':forgetpasswordCubit.emailController.text,
+                      forgetpasswordCubit
+                          .forgetPassword(AppConstants.forgetPasswordPath, {
+                        'email': forgetpasswordCubit.emailController.text,
                       });
                     }
                   },

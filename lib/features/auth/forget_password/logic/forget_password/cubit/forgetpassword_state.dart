@@ -18,3 +18,20 @@ final class ForgetpasswordError extends ForgetpasswordState {
 
   ForgetpasswordError({this.message});
 }
+
+final class VerifycodeInitial extends ForgetpasswordState {}
+
+final class VerifycodeLoading extends ForgetpasswordState {}
+
+final class VerifycodeSuccess extends ForgetpasswordState {
+  final VerfiyResetCodeModel? verfiyResetCodeModel;
+
+  VerifycodeSuccess({this.verfiyResetCodeModel});
+}
+
+final class VerifycodeError extends ForgetpasswordState {
+  final String? message;
+
+  VerifycodeError({this.message});
+}
+
