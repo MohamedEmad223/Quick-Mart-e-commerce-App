@@ -1,6 +1,5 @@
 part of 'forgetpassword_cubit.dart';
 
-
 sealed class ForgetpasswordState {}
 
 final class ForgetpasswordInitial extends ForgetpasswordState {}
@@ -50,4 +49,3 @@ final class CreatePasswordError extends ForgetpasswordState {
 
   CreatePasswordError({this.message});
 }
-

@@ -5,15 +5,18 @@ import 'package:quick_mart/features/auth/forget_password/data/repo/forget_passwo
 
 import '../../../data/model/forget_password_model.dart';
 import '../../../data/model/verify_code_model.dart';
+import '../../../data/repo/reset_password_repo.dart';
 import '../../../data/repo/verify_code_repo.dart';
 
 part 'forgetpassword_state.dart';
 
 class ForgetpasswordCubit extends Cubit<ForgetpasswordState> {
-  ForgetpasswordCubit(this._forgetPasswordRepo,this._verifyCodeRepo) : super(ForgetpasswordInitial());
-final TextEditingController emailController = TextEditingController();
+  ForgetpasswordCubit(
+      this._forgetPasswordRepo, this._verifyCodeRepo, this._resetPasswordRepo)
+      : super(ForgetpasswordInitial());
+  final TextEditingController emailController = TextEditingController();
 
- final ForgetPasswordRepo _forgetPasswordRepo;
+  final ForgetPasswordRepo _forgetPasswordRepo;
 
   Future<void> forgetPassword(String path, Map<String, dynamic> data) async {
     emit(ForgetpasswordLoading());
@@ -34,6 +37,21 @@ final TextEditingController emailController = TextEditingController();
     result.fold(
       (error) => emit(VerifycodeError(message: error)),
       (success) => emit(VerifycodeSuccess(verfiyResetCodeModel: success)),
+    );
+  }
+
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
+
+  final ResetPasswordRepo _resetPasswordRepo;
+
+  Future<void> resetPassword(String path, Map<String, dynamic> data) async {
+    emit(CreatePasswordLoading());
+    final result = await _resetPasswordRepo.resetPassword(path, data);
+    result.fold(
+      (error) => emit(CreatePasswordError(message: error)),
+      (success) => emit(CreatePasswordSuccess(resetPasswordModel: success)),
     );
   }
 }
