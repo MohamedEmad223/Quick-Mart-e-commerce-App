@@ -9,6 +9,8 @@ import 'package:quick_mart/features/auth/sign_in/sign_up/views/screens/log_in_sc
 import 'package:quick_mart/features/on_boarding/view/screen/on_boarding_screen.dart';
 
 import '../../features/auth/forget_password/data/repo/forget_password_repo.dart';
+import '../../features/auth/forget_password/data/repo/verify_code_repo.dart';
+import '../../features/auth/forget_password/logic/code_verfication/cubit/verifycode_cubit.dart';
 import '../../features/auth/forget_password/views/screens/email_verfication.dart';
 import '../../features/auth/forget_password/views/screens/send_code_screen.dart';
 import '../../features/auth/sign_in/sign_up/data/repo/login_repo.dart';
@@ -63,8 +65,15 @@ class AppRoutes {
                 ));
       case Routes.sendCodeScreen:
         return MaterialPageRoute(
-            builder: (context) => const SendCodeScreen(),
-          );
+          builder: (context) => BlocProvider(
+            create: (context) => VerifycodeCubit(
+              VerifyCodeRepo(
+                DioHandler(),
+              ),
+            ),
+            child: const SendCodeScreen(),
+          ),
+        );
       case Routes.home:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
       case Routes.success:
