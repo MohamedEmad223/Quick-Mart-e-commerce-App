@@ -16,7 +16,6 @@ class QuickMart extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, _) => MaterialApp(
         theme: ThemeData(
-          
           appBarTheme: AppBarTheme(
             elevation: 0,
             color: Colors.white,
@@ -31,7 +30,7 @@ class QuickMart extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.splash,
+        initialRoute: Routes.home,
         onGenerateRoute: AppRoutes().onGenerateRoute,
       ),
     );
