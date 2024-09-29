@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../features/home/views/screens/home_screen.dart';
+import '../theming/app_colors.dart';
 
 
 
@@ -40,7 +41,7 @@ class BottomNav extends StatelessWidget {
               ),
               child: BottomNavigationBar(
                 type: BottomNavigationBarType.fixed,
-                backgroundColor: AppColors.backGroundColorofNavBar,
+                backgroundColor: Colors.white,
                 elevation: 0.0,
                 items: <BottomNavigationBarItem>[
                   BottomNavigationBarItem(
