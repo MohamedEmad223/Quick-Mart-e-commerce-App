@@ -87,17 +87,17 @@ class BottomNav extends StatelessWidget {
                   ),
                 ],
                 currentIndex: botNavCubit.currentIndex,
-                selectedItemColor: AppColors.mainColor, // Set selected color
-                unselectedItemColor: Colors.grey, // Set unselected color
+                selectedItemColor: AppColors.mainColor, 
+                unselectedItemColor: Colors.grey, 
                 unselectedLabelStyle:
-                    AppTextStyle.plusJakartaSans13blackColor, // Unselected style
+                    AppTextStyle.plusJakartaSans13blackColor, 
                 selectedLabelStyle: AppTextStyle.plusJakartaSans14mediummainColor
                     .copyWith(
                   fontWeight: FontWeight.w400,
                   fontSize: 12.sp,
-                ), // Selected style
+                ), 
                 onTap: (value) {
-                  botNavCubit.changeIndex(value); // Update index
+                  botNavCubit.changeIndex(value); 
                 },
               ),
             ),
