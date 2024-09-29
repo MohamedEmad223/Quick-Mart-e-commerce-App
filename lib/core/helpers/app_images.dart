@@ -12,4 +12,13 @@ class AppImages {
   static const String loginLogo = 'assets/svgs/on_boarding/quickmart.svg';
   //----------------success screen----------------
   static const String successLogo = 'assets/svgs/success/Rectangle 1741.svg';
+  //----------------home screen----------------
+  static const String homeLogo = 'assets/svgs/home/home-2.svg';
+  static const String categoriesLogo = 'assets/svgs/home/category-2.svg';
+  static const String cartLogo = 'assets/svgs/home/shopping-cart.svg';
+  static const String profileLogo = 'assets/svgs/home/profile.svg';
+  static const String wishlistLogo = 'assets/svgs/home/heart.svg';
+  static const String searchLogo = 'assets/svgs/home/search-normal.svg';
+  static const String personLogo = 'assets/svgs/home/person.svg';
+  static const String bannerLogo = 'assets/svgs/home/Rectangle 6.svg';
 }

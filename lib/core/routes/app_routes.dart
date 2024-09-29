@@ -17,8 +17,10 @@ import '../../features/auth/forget_password/views/screens/send_code_screen.dart'
 import '../../features/auth/sign_in/sign_up/data/repo/login_repo.dart';
 import '../../features/auth/sign_in/sign_up/logic/cubit/Auth_cubit.dart';
 import '../../features/auth/sign_in/sign_up/views/screens/sign_up_screen.dart';
-import '../../features/home/home_screen.dart';
+import '../../features/home/logic/botnavbar/cubit/botnavbar_cubit.dart';
+import '../../features/home/views/screens/home_screen.dart';
 import '../../features/splash/screens/splash_screen.dart';
+import '../widgets/bottom_nav_bar.dart';
 
 class AppRoutes {
   Route? onGenerateRoute(RouteSettings settings) {
@@ -102,6 +104,14 @@ class AppRoutes {
               ),
             ),
             child: const CreatePasswordScreen(),
+          ),
+        );
+
+      case Routes.botNavBar:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => BotnavbarCubit(),
+            child: const BottomNav(),
           ),
         );
       case Routes.home:
