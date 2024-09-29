@@ -9,4 +9,5 @@ class Routes {
   static const forgetPassword = '/forgetPassword';
   static const sendCodeScreen = '/sendCodeScreen';
   static const createPasswordScreen = '/createPasswordScreen';
+  static const botNavBar = '/bottomNav';
 }

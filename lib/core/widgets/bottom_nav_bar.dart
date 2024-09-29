@@ -19,7 +19,7 @@ class BottomNav extends StatelessWidget {
       const WorkOutScreen(),
       const SettingsScreen(),
     ];
-    var botNavCubit = BlocProvider.of<BotNavBarCubit>(context);
+    var botNavCubit = BlocProvider.of<BotnavbarCubit>(context);
     return BlocBuilder<BotNavBarCubit, BotNavBarState>(
       builder: (context, state) {
         return Scaffold(
