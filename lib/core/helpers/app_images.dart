@@ -18,5 +18,4 @@ class AppImages {
   static const String cartLogo = 'assets/svgs/home/shopping-cart.svg';
   static const String profileLogo = 'assets/svgs/home/profile.svg';
   static const String wishlistLogo = 'assets/svgs/home/heart.svg';
-
 }
