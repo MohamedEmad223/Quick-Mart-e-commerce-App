@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:quick_mart/core/helpers/app_images.dart';
+import 'package:quick_mart/features/cart/cart_screen.dart';
+import 'package:quick_mart/features/categories/categories_screen.dart';
+import 'package:quick_mart/features/settings/profile_screen.dart';
+import 'package:quick_mart/features/whislist/wishlist_screen.dart';
 
+import '../../features/home/logic/botnavbar/cubit/botnavbar_cubit.dart';
 import '../../features/home/views/screens/home_screen.dart';
 import '../theming/app_colors.dart';
-
-
-
+import '../theming/app_text_style.dart';
 
 class BottomNav extends StatelessWidget {
   const BottomNav({super.key});
@@ -16,12 +20,14 @@ class BottomNav extends StatelessWidget {
   Widget build(BuildContext context) {
     List pages = [
       const HomeScreen(),
-      const DietsScreen(),
-      const WorkOutScreen(),
-      const SettingsScreen(),
+      const CategoriesScreen(),
+      const CartScreen(),
+      const WishlistScreen(),
+      const ProfileScreen(),
     ];
+
     var botNavCubit = BlocProvider.of<BotnavbarCubit>(context);
-    return BlocBuilder<BotNavBarCubit, BotNavBarState>(
+    return BlocBuilder<BotnavbarCubit, BotnavbarState>(
       builder: (context, state) {
         return Scaffold(
           extendBody: true,
@@ -45,45 +51,53 @@ class BottomNav extends StatelessWidget {
                 elevation: 0.0,
                 items: <BottomNavigationBarItem>[
                   BottomNavigationBarItem(
-                    icon: botNavCubit.currentIndex == 0
-                        ? SvgPicture.asset(Assets.svgsResultsHomeiconselected)
-                        : SvgPicture.asset(Assets.svgsResultsHomeicon),
-                    label: 'النتائج',
+                    icon: SvgPicture.asset(AppImages.homeLogo,
+                        color: botNavCubit.currentIndex == 0
+                            ? AppColors.mainColor
+                            : Colors.grey),
+                    label: 'Home',
                   ),
                   BottomNavigationBarItem(
-                    icon: botNavCubit.currentIndex == 1
-                        ? SvgPicture.asset(Assets.svgsResultsTableSelected)
-                        : SvgPicture.asset(Assets.svgsResultsTable),
-                    label: 'الوجبات',
+                    icon: SvgPicture.asset(AppImages.categoriesLogo,
+                        color: botNavCubit.currentIndex == 1
+                            ? AppColors.mainColor
+                            : Colors.grey),
+                    label: 'Categories',
                   ),
                   BottomNavigationBarItem(
-                    icon: botNavCubit.currentIndex == 2
-                        ? SvgPicture.asset(Assets.svgsResultsWeightSelected)
-                        : SvgPicture.asset(Assets.svgsResultsWeightlift),
-                    label: 'التمارين',
+                    icon: SvgPicture.asset(AppImages.cartLogo,
+                        color: botNavCubit.currentIndex == 2
+                            ? AppColors.mainColor
+                            : Colors.grey),
+                    label: 'My Cart',
                   ),
                   BottomNavigationBarItem(
-                    icon: botNavCubit.currentIndex == 3
-                        ? SvgPicture.asset(Assets.svgsResultsSettingsSelected)
-                        : SvgPicture.asset(Assets.svgsResultsSettings),
-                    label: 'الاعدادات',
+                    icon: SvgPicture.asset(AppImages.wishlistLogo,
+                        color: botNavCubit.currentIndex == 3
+                            ? AppColors.mainColor
+                            : Colors.grey),
+                    label: 'Wishlist',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: SvgPicture.asset(AppImages.profileLogo,
+                        color: botNavCubit.currentIndex == 4
+                            ? AppColors.mainColor
+                            : Colors.grey),
+                    label: 'Profile',
                   ),
                 ],
                 currentIndex: botNavCubit.currentIndex,
-                selectedItemColor: AppColors.mainColor,
-                unselectedItemColor: Colors.black,
+                selectedItemColor: AppColors.mainColor, // Set selected color
+                unselectedItemColor: Colors.grey, // Set unselected color
                 unselectedLabelStyle:
-                    AppTextStyles.cairosemibold14maincolor.copyWith(
+                    AppTextStyle.plusJakartaSans13blackColor, // Unselected style
+                selectedLabelStyle: AppTextStyle.plusJakartaSans14mediummainColor
+                    .copyWith(
                   fontWeight: FontWeight.w400,
                   fontSize: 12.sp,
-                ),
-                selectedLabelStyle:
-                    AppTextStyles.cairosemibold14maincolor.copyWith(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 12.sp,
-                ),
+                ), // Selected style
                 onTap: (value) {
-                  botNavCubit.changeIndex(value);
+                  botNavCubit.changeIndex(value); // Update index
                 },
               ),
             ),

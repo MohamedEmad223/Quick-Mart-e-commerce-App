@@ -30,7 +30,7 @@ class QuickMart extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.home,
+        initialRoute: Routes.botNavBar,
         onGenerateRoute: AppRoutes().onGenerateRoute,
       ),
     );
