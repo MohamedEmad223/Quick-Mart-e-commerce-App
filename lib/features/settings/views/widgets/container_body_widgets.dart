@@ -21,16 +21,40 @@ class ContainerBodyWidgets extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 15.w),
-        child: const Column(
+        padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 20.w),
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            LableTextWidgets(
+            const LableTextWidgets(
               text: 'Personal Information',
             ),
-            InformationRowWidgets(
+            const InformationRowWidgets(
               text: 'Shipping Address',
               icon: AppImages.shippingAdressLogo,
+            ),
+            const InformationRowWidgets(
+              text: 'Payment Method',
+              icon: AppImages.paymentLogo,
+            ),
+            const InformationRowWidgets(
+              text: 'Oreders History',
+              icon: AppImages.orderLogo,
+            ),
+            SizedBox(height: 20.h),
+            const LableTextWidgets(
+              text: 'Support & information',
+            ),
+            const InformationRowWidgets(
+              text: 'Privacy Policy',
+              icon: AppImages.privacyLogo,
+            ),
+            const InformationRowWidgets(
+              text: 'Terms & Conditions',
+              icon: AppImages.termAndConsitonLogo,
+            ),
+            const InformationRowWidgets(
+              text: 'FAQs',
+              icon: AppImages.aboutUsLogo,
             ),
           ],
         ),
