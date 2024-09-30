@@ -30,17 +30,17 @@ class ContainerBodyWidgets extends StatelessWidget {
               text: 'Personal Information',
             ),
             const InformationRowWidgets(
-              routes: Routes.changePassword,
+              routes: Routes.shippingAddress,
               text: 'Shipping Address',
               icon: AppImages.shippingAdressLogo,
             ),
             const InformationRowWidgets(
-              routes: Routes.changePassword,
+              routes: Routes.paymentMethod,
               text: 'Payment Method',
               icon: AppImages.paymentLogo,
             ),
             const InformationRowWidgets(
-              routes: Routes.changePassword,
+              routes: Routes.orderHistory,
               text: 'Oreders History',
               icon: AppImages.orderLogo,
             ),
@@ -49,17 +49,17 @@ class ContainerBodyWidgets extends StatelessWidget {
               text: 'Support & information',
             ),
             const InformationRowWidgets(
-              routes: Routes.changePassword,
+              routes: Routes.privacyPolicy,
               text: 'Privacy Policy',
               icon: AppImages.privacyLogo,
             ),
             const InformationRowWidgets(
-              routes: Routes.changePassword,
+              routes: Routes.termsAndConditions,
               text: 'Terms & Conditions',
               icon: AppImages.termAndConsitonLogo,
             ),
             const InformationRowWidgets(
-              routes: Routes.changePassword,
+              routes: Routes.faqs,
               text: 'FAQs',
               icon: AppImages.aboutUsLogo,
             ),
@@ -73,7 +73,7 @@ class ContainerBodyWidgets extends StatelessWidget {
               icon: AppImages.changePasswordLogo,
             ),
             const InformationRowWidgets(
-              routes: Routes.changePassword,
+              routes: Routes.darkTheme,
               text: 'Dark Theme',
               icon: AppImages.darkModeLogo,
             ),
