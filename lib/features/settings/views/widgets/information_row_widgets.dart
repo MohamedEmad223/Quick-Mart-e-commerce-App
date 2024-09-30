@@ -4,11 +4,13 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/helpers/app_images.dart';
 import '../../../../core/theming/app_text_style.dart';
-import '../screens/change_password.dart';
 
 class InformationRowWidgets extends StatelessWidget {
   const InformationRowWidgets(
-      {super.key, required this.text, required this.icon, required this.routes});
+      {super.key,
+      required this.text,
+      required this.icon,
+      required this.routes});
   final String text;
   final String icon;
   final String routes;
@@ -17,10 +19,8 @@ class InformationRowWidgets extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => const ChangePassword(),
-          ),
+        Navigator.of(context).pushNamed(
+          routes,
         );
       },
       child: Column(
