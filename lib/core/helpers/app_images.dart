@@ -31,4 +31,5 @@ class AppImages {
   static const String aboutUsLogo = 'assets/svgs/settings/message-question.svg';
   static const String changePasswordLogo = 'assets/svgs/settings/lock.svg';
   static const String darkModeLogo = 'assets/svgs/settings/mobile.svg';
+  static const String backArrowLogo = 'assets/svgs/settings/Vector.svg';
 }

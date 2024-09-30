@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quick_mart/features/settings/views/widgets/information_row_widgets.dart';
 
+import '../../../../core/helpers/app_images.dart';
 import 'lable_text_widgets.dart';
 
 class ContainerBodyWidgets extends StatelessWidget {
@@ -25,7 +27,11 @@ class ContainerBodyWidgets extends StatelessWidget {
           children: [
             LableTextWidgets(
               text: 'Personal Information',
-            )
+            ),
+            InformationRowWidgets(
+              text: 'Shipping Address',
+              icon: AppImages.shippingAdressLogo,
+            ),
           ],
         ),
       ),
