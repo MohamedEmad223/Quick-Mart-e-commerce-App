@@ -14,7 +14,7 @@ class HeadWidgetsOfProfileScreen extends StatelessWidget {
     return Row(
       children: [
         Container(
-          height: 100.h,
+          height: 120.h,
           width: 390.w,
           decoration: const BoxDecoration(
             color: AppColors.mainColor,
