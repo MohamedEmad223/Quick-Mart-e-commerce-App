@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quick_mart/core/widgets/custom_button.dart';
+
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_text_style.dart';
 
 class ShippingAddressScreen extends StatelessWidget {
   const ShippingAddressScreen({super.key});
@@ -7,10 +12,24 @@ class ShippingAddressScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Column(
-        children: [
-          Text('Shipping Address'),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(15),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomButton(
+                buttonText: 'Add Address',
+                buttonAction: () {},
+                buttonStyle: AppTextStyle.plusJakartaSans16BoldWhite,
+                color: AppColors.blackColor),
+            SizedBox(height: 100.h),
+            CustomButton(
+                buttonText: 'Remove Address',
+                buttonAction: () {},
+                buttonStyle: AppTextStyle.plusJakartaSans16BoldWhite,
+                color: AppColors.blackColor),
+          ],
+        ),
       ),
     );
   }
