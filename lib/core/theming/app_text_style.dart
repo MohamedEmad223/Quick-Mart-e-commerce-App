@@ -42,6 +42,13 @@ class AppTextStyle {
     fontWeight: FontWeight.normal,
   );
 
+  static TextStyle plusJakartaSans14mediumlsecGreyColor =
+      GoogleFonts.plusJakartaSans(
+    color: AppColors.secGreyColor,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+  );
+
   static TextStyle plusJakartaSans14mediumblackColor =
       GoogleFonts.plusJakartaSans(
     color: AppColors.blackColor,
@@ -49,11 +56,32 @@ class AppTextStyle {
     fontWeight: FontWeight.w500,
   );
 
+  static TextStyle plusJakartaSans12boldblackColor =
+      GoogleFonts.plusJakartaSans(
+    color: AppColors.blackColor,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w600,
+  );
+
   static TextStyle plusJakartaSans18boldblackColor =
       GoogleFonts.plusJakartaSans(
     color: AppColors.blackColor,
     fontSize: 18.sp,
     fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle plusJakartaSans16boldwhiteColor =
+      GoogleFonts.plusJakartaSans(
+    color: Colors.white,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle plusJakartaSans14boldwhiteColor =
+      GoogleFonts.plusJakartaSans(
+    color: Colors.white,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
   );
 
   static TextStyle plusJakartaSans14mediummainColor =
