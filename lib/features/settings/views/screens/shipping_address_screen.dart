@@ -12,7 +12,14 @@ class ShippingAddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(
+          'Shipping Address',
+          style: AppTextStyle.plusJakartaSans14mediumblackColor,
+        ),
+        centerTitle: true,
+        elevation: 0,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: Column(

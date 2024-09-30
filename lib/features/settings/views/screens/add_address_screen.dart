@@ -22,6 +22,7 @@ class AddAdressScreen extends StatelessWidget {
           'Add Address',
           style: AppTextStyle.plusJakartaSans14mediumblackColor,
         ),
+        centerTitle: true,
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15.h, vertical: 20.w),
