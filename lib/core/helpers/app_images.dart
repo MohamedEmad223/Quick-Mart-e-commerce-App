@@ -21,4 +21,6 @@ class AppImages {
   static const String searchLogo = 'assets/svgs/home/search-normal.svg';
   static const String personLogo = 'assets/svgs/home/person.svg';
   static const String bannerLogo = 'assets/svgs/home/Rectangle 6.svg';
+  //----------------settings screen----------------
+  static const String logOutLogo = 'assets/svgs/settings/logout.svg';
 }
