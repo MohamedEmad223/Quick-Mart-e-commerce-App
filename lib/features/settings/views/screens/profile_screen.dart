@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:quick_mart/core/helpers/app_images.dart';
 import 'package:quick_mart/core/theming/app_colors.dart';
 import 'package:quick_mart/core/theming/app_text_style.dart';
 
@@ -49,9 +50,10 @@ class ProfileScreen extends StatelessWidget {
                               style:
                                   AppTextStyle.plusJakartaSans14boldwhiteColor,
                             ),
-                            SvgPicture.asset(assetName)
                           ],
-                        )
+                        ),
+                        const Spacer(),
+                        SvgPicture.asset(AppImages.logOutLogo)
                       ],
                     ),
                   ),
