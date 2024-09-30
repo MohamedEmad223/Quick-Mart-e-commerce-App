@@ -4,6 +4,7 @@ import 'package:quick_mart/core/widgets/custom_button.dart';
 
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_text_style.dart';
+import 'add_address_screen.dart';
 
 class ShippingAddressScreen extends StatelessWidget {
   const ShippingAddressScreen({super.key});
@@ -19,7 +20,11 @@ class ShippingAddressScreen extends StatelessWidget {
           children: [
             CustomButton(
                 buttonText: 'Add Address',
-                buttonAction: () {},
+                buttonAction: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const AddAdressScreen();
+                  }));
+                },
                 buttonStyle: AppTextStyle.plusJakartaSans16BoldWhite,
                 color: AppColors.blackColor),
             SizedBox(height: 100.h),
