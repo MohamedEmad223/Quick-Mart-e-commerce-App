@@ -12,4 +12,11 @@ class Routes {
   static const botNavBar = '/bottomNav';
   static const settings = '/settings';
   static const changePassword = '/changePassword';
+  static const shippingAddress = '/shippingAddress';
+  static const paymentMethod = '/paymentMethod';
+  static const orderHistory = '/orderHistory';
+  static const privacyPolicy = '/privacyPolicy';
+  static const termsAndConditions = '/termsAndConditions';
+  static const faqs = '/faqs';
+  static const darkTheme = '/darkTheme';
 }
