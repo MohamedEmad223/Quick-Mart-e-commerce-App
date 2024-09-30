@@ -23,4 +23,12 @@ class AppImages {
   static const String bannerLogo = 'assets/svgs/home/Rectangle 6.svg';
   //----------------settings screen----------------
   static const String logOutLogo = 'assets/svgs/settings/logout.svg';
+  static const String shippingAdressLogo = 'assets/svgs/settings/box.svg';
+  static const String paymentLogo = 'assets/svgs/settings/card-tick.svg';
+  static const String orderLogo = 'assets/svgs/settings/receipt-edit.svg';
+  static const String privacyLogo = 'assets/svgs/settings/shield-tick.svg';
+  static const String termAndConsitonLogo = 'assets/svgs/settings/document-text.svg';
+  static const String aboutUsLogo = 'assets/svgs/settings/message-question.svg';
+  static const String changePasswordLogo = 'assets/svgs/settings/lock.svg';
+  static const String darkModeLogo = 'assets/svgs/settings/mobile.svg';
 }
