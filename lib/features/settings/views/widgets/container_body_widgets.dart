@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_mart/features/settings/views/widgets/information_row_widgets.dart';
 
 import '../../../../core/helpers/app_images.dart';
+import '../../../../core/routes/routes.dart';
 import 'lable_text_widgets.dart';
 
 class ContainerBodyWidgets extends StatelessWidget {
@@ -29,14 +30,17 @@ class ContainerBodyWidgets extends StatelessWidget {
               text: 'Personal Information',
             ),
             const InformationRowWidgets(
+              routes: Routes.changePassword,
               text: 'Shipping Address',
               icon: AppImages.shippingAdressLogo,
             ),
             const InformationRowWidgets(
+              routes: Routes.changePassword,
               text: 'Payment Method',
               icon: AppImages.paymentLogo,
             ),
             const InformationRowWidgets(
+              routes: Routes.changePassword,
               text: 'Oreders History',
               icon: AppImages.orderLogo,
             ),
@@ -45,14 +49,17 @@ class ContainerBodyWidgets extends StatelessWidget {
               text: 'Support & information',
             ),
             const InformationRowWidgets(
+              routes: Routes.changePassword,
               text: 'Privacy Policy',
               icon: AppImages.privacyLogo,
             ),
             const InformationRowWidgets(
+              routes: Routes.changePassword,
               text: 'Terms & Conditions',
               icon: AppImages.termAndConsitonLogo,
             ),
             const InformationRowWidgets(
+              routes: Routes.changePassword,
               text: 'FAQs',
               icon: AppImages.aboutUsLogo,
             ),
@@ -61,10 +68,12 @@ class ContainerBodyWidgets extends StatelessWidget {
               text: 'Account Management',
             ),
             const InformationRowWidgets(
+              routes: Routes.changePassword,
               text: 'Change Password',
               icon: AppImages.changePasswordLogo,
             ),
             const InformationRowWidgets(
+              routes: Routes.changePassword,
               text: 'Dark Theme',
               icon: AppImages.darkModeLogo,
             ),

@@ -10,4 +10,6 @@ class Routes {
   static const sendCodeScreen = '/sendCodeScreen';
   static const createPasswordScreen = '/createPasswordScreen';
   static const botNavBar = '/bottomNav';
+  static const settings = '/settings';
+  static const changePassword = '/changePassword';
 }

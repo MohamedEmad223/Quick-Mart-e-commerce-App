@@ -7,6 +7,7 @@ import 'package:quick_mart/features/auth/forget_password/views/screens/success_s
 import 'package:quick_mart/features/auth/sign_in/sign_up/data/repo/sign_up_repo.dart';
 import 'package:quick_mart/features/auth/sign_in/sign_up/views/screens/log_in_screen.dart';
 import 'package:quick_mart/features/on_boarding/view/screen/on_boarding_screen.dart';
+import 'package:quick_mart/features/settings/views/screens/change_password.dart';
 
 import '../../features/auth/forget_password/data/repo/forget_password_repo.dart';
 import '../../features/auth/forget_password/data/repo/reset_password_repo.dart';
@@ -116,6 +117,8 @@ class AppRoutes {
         );
       case Routes.home:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
+      case Routes.changePassword:
+        return MaterialPageRoute(builder: (context) => const ChangePassword());
       case Routes.success:
         return MaterialPageRoute(builder: (context) => const SuccessScreen());
       default:
