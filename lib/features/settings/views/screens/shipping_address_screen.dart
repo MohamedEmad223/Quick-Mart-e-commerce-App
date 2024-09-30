@@ -30,12 +30,63 @@ class ShippingAddressScreen extends StatelessWidget {
             SizedBox(height: 100.h),
             CustomButton(
                 buttonText: 'Remove Address',
-                buttonAction: () {},
+                buttonAction: () {
+                  showAlertDialog(context);
+                },
                 buttonStyle: AppTextStyle.plusJakartaSans16BoldWhite,
                 color: AppColors.blackColor),
           ],
         ),
       ),
+    );
+  }
+
+  void showAlertDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: Text(
+            "Are you sure you want to remove this address?",
+            textAlign: TextAlign.center,
+            style: AppTextStyle.plusJakartaSans13blackColor,
+          ),
+          actions: [
+            InkWell(
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+              child: Container(
+                height: 30.h,
+                width: 60.w,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: AppColors.blackColor,
+                  borderRadius: BorderRadius.circular(20.r),
+                ),
+                child: Text('Cancl',
+                    style: AppTextStyle.plusJakartaSans16BoldWhite),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+              child: Container(
+                height: 30.h,
+                width: 60.w,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: AppColors.tFFErrorColor,
+                  borderRadius: BorderRadius.circular(20.r),
+                ),
+                child:
+                    Text('Ok', style: AppTextStyle.plusJakartaSans16BoldWhite),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }
