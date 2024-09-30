@@ -56,6 +56,18 @@ class ContainerBodyWidgets extends StatelessWidget {
               text: 'FAQs',
               icon: AppImages.aboutUsLogo,
             ),
+            SizedBox(height: 20.h),
+            const LableTextWidgets(
+              text: 'Account Management',
+            ),
+            const InformationRowWidgets(
+              text: 'Change Password',
+              icon: AppImages.changePasswordLogo,
+            ),
+            const InformationRowWidgets(
+              text: 'Dark Theme',
+              icon: AppImages.darkModeLogo,
+            ),
           ],
         ),
       ),
