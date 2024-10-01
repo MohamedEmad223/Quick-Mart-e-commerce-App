@@ -104,8 +104,8 @@ class PrivacyScreen extends StatelessWidget {
                 style: AppTextStyle.plusJakartaSans13blackColor
                     .copyWith(fontWeight: FontWeight.bold, fontSize: 15.sp),
               ),
-              Text(
-                '   - We reserve the right to update this Privacy Policy from time to time. Any changes will be posted on our app, and the revised policy will be effective upon posting.\nIf you have any questions or concerns about our Privacy Policy, please contact our customer support. By using QuickMart, you acknowledge that you have read and understood this Privacy Policy and agree to its terms and conditions.',
+               Text(
+                '   - QuickMart is not intended for children under the age of 13. We do not knowingly collect or solicit personal information from children.',
                 style: AppTextStyle.plusJakartaSans12boldblackColor
                     .copyWith(color: AppColors.greyColor),
               ),
