@@ -36,3 +36,37 @@ class QuickMart extends StatelessWidget {
     );
   }
 }
+
+final lightTheme = ThemeData(
+  appBarTheme: const AppBarTheme(
+    elevation: 0,
+    color: Colors.white,
+    surfaceTintColor: Colors.white,
+    scrolledUnderElevation: 0,
+    iconTheme: IconThemeData(
+      color: AppColors.mainColor,
+      size: 28,
+    ),
+  ),
+  visualDensity: VisualDensity.adaptivePlatformDensity,
+  scaffoldBackgroundColor: Colors.white,
+  // Define other light theme attributes as needed
+);
+
+
+final darkTheme = ThemeData(
+  appBarTheme: const AppBarTheme(
+    elevation: 0,
+    color: Colors.black, // Example color for dark theme app bar
+    surfaceTintColor: Colors.black,
+    scrolledUnderElevation: 0,
+    iconTheme: IconThemeData(
+      color: AppColors.mainColor,
+      size: 28,
+    ),
+  ),
+  visualDensity: VisualDensity.adaptivePlatformDensity,
+  scaffoldBackgroundColor: Colors.black, // Example color for dark theme background
+  // Define other dark theme attributes as needed
+);
+
