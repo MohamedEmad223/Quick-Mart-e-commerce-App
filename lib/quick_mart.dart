@@ -15,20 +15,9 @@ class QuickMart extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, _) => MaterialApp(
-        theme: ThemeData(
-          appBarTheme: AppBarTheme(
-            elevation: 0,
-            color: Colors.white,
-            surfaceTintColor: Colors.white,
-            scrolledUnderElevation: 0,
-            iconTheme: IconThemeData(
-              color: AppColors.mainColor,
-              size: 28.r,
-            ),
-          ),
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          scaffoldBackgroundColor: Colors.white,
-        ),
+        theme: lightTheme, // Set initial theme to lightTheme
+        darkTheme: darkTheme,
+        themeMode: ThemeMode.system, // Set to ThemeMode.dark for default dark mode
         debugShowCheckedModeBanner: false,
         initialRoute: Routes.botNavBar,
         onGenerateRoute: AppRoutes().onGenerateRoute,
@@ -36,3 +25,38 @@ class QuickMart extends StatelessWidget {
     );
   }
 }
+
+
+ final  lightTheme = ThemeData(
+  appBarTheme: const AppBarTheme(
+    elevation: 0,
+    color: Colors.white,
+    surfaceTintColor: Colors.white,
+    scrolledUnderElevation: 0,
+    iconTheme: IconThemeData(
+      color: AppColors.mainColor,
+      size: 28,
+    ),
+  ),
+  visualDensity: VisualDensity.adaptivePlatformDensity,
+  scaffoldBackgroundColor: Colors.white,
+  // Define other light theme attributes as needed
+);
+
+
+final darkTheme = ThemeData(
+  appBarTheme: const AppBarTheme(
+    elevation: 0,
+    color: Colors.black, // Example color for dark theme app bar
+    surfaceTintColor: Colors.black,
+    scrolledUnderElevation: 0,
+    iconTheme: IconThemeData(
+      color: AppColors.mainColor,
+      size: 28,
+    ),
+  ),
+  visualDensity: VisualDensity.adaptivePlatformDensity,
+  scaffoldBackgroundColor: Colors.black, // Example color for dark theme background
+  // Define other dark theme attributes as needed
+);
+
