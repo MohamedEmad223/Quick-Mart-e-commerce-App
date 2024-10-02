@@ -7,7 +7,7 @@ import 'package:quick_mart/features/auth/forget_password/views/screens/success_s
 import 'package:quick_mart/features/auth/sign_in/sign_up/data/repo/sign_up_repo.dart';
 import 'package:quick_mart/features/auth/sign_in/sign_up/views/screens/log_in_screen.dart';
 import 'package:quick_mart/features/on_boarding/view/screen/on_boarding_screen.dart';
-import 'package:quick_mart/features/orders/orders_screen.dart';
+import 'package:quick_mart/features/orders/views/screens/orders_screen.dart';
 import 'package:quick_mart/features/settings/views/screens/change_password.dart';
 import 'package:quick_mart/features/settings/views/screens/dark_mode_screen.dart';
 import 'package:quick_mart/features/settings/views/screens/faqs_screen.dart';
