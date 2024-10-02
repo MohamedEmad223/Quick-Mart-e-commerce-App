@@ -15,6 +15,7 @@ import 'package:quick_mart/features/settings/views/screens/privacy_screen.dart';
 import 'package:quick_mart/features/settings/views/screens/profile_screen.dart';
 import 'package:quick_mart/features/settings/views/screens/shipping_address_screen.dart';
 import 'package:quick_mart/features/settings/views/screens/term_and_conditions.dart';
+import 'package:quick_mart/features/whislist/logic/cubit/whilist_cubit.dart';
 
 import '../../features/auth/forget_password/data/repo/forget_password_repo.dart';
 import '../../features/auth/forget_password/data/repo/reset_password_repo.dart';
@@ -115,8 +116,12 @@ class AppRoutes {
             child: const CreatePasswordScreen(),
           ),
         );
-case Routes.whislist:
-        return MaterialPageRoute(builder: (context) => const WishlistScreen());
+      case Routes.whislist:
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                  create: (context) => WhilistCubit(),
+                  child: const WishlistScreen(),
+                ));
       case Routes.botNavBar:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
