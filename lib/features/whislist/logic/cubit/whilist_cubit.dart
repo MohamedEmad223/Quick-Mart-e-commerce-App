@@ -18,15 +18,26 @@ class WhilistCubit extends Cubit<WhilistState> {
 
   List<Product> wishlist = [];
 
- 
-
-  void addProductToWishlist(Product product) {
-    wishlist.add(product);
-    emit(WishlistUpdated(wishlist: wishlist));
+  void loadProducts() {
+    try {
+      // Emit loaded state with product list and wishlist
+      emit(WhilistLoaded(products: products, wishlist: wishlist));
+    } catch (e) {
+      emit(WhilistError('Failed to load products'));
+    }
   }
 
-  void removeProductFromWishlist(Product product) {
-    wishlist.remove(product);
-    emit(WishlistUpdated(wishlist: wishlist));
+  void toggleFavorite(Product product) {
+    if (state is WhilistLoaded) {
+      product.isFavorite = !product.isFavorite;
+      if (product.isFavorite) {
+        wishlist.add(product);
+      } else {
+        wishlist.remove(product);
+      }
+
+      // Emit updated product and wishlist state
+      emit(WhilistLoaded(products: products, wishlist: wishlist));
+    }
   }
 }

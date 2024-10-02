@@ -117,20 +117,20 @@ class AppRoutes {
           ),
         );
       case Routes.whislist:
-        return MaterialPageRoute(
-            builder: (context) => BlocProvider(
-                  create: (context) => WhilistCubit(),
-                  child: const WishlistScreen(),
-                ));
+        return MaterialPageRoute(builder: (context) => const WishlistScreen());
       case Routes.botNavBar:
         return MaterialPageRoute(
-          builder: (context) => BlocProvider(
-            create: (context) => BotnavbarCubit(),
-            child: const BottomNav(),
-          ),
+          builder: (context) => MultiBlocProvider(providers: [
+            BlocProvider<BotnavbarCubit>(
+              create: (context) => BotnavbarCubit(),
+            ),
+            BlocProvider<WhilistCubit>(
+              create: (context) => WhilistCubit()..loadProducts(),
+              child: const HomeScreen(),
+            ),
+          ], child: const BottomNav()),
         );
-      case Routes.home:
-        return MaterialPageRoute(builder: (context) => const HomeScreen());
+
       case Routes.settings:
         return MaterialPageRoute(builder: (context) => const ProfileScreen());
       case Routes.shippingAddress:
