@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_text_style.dart';
@@ -66,14 +67,14 @@ class OrdersScreen extends StatelessWidget {
             ),
           ),
         ),
-        body: const TabBarView(
+        body:  TabBarView(
           children: [
             // First tab content
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  Text('On going Orders'),
+                  SvgPicture.asset(),
                 ],
               ),
             ),
