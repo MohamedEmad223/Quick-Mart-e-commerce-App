@@ -27,9 +27,13 @@ class AppImages {
   static const String paymentLogo = 'assets/svgs/settings/card-tick.svg';
   static const String orderLogo = 'assets/svgs/settings/receipt-edit.svg';
   static const String privacyLogo = 'assets/svgs/settings/shield-tick.svg';
-  static const String termAndConsitonLogo = 'assets/svgs/settings/document-text.svg';
+  static const String termAndConsitonLogo =
+      'assets/svgs/settings/document-text.svg';
   static const String aboutUsLogo = 'assets/svgs/settings/message-question.svg';
   static const String changePasswordLogo = 'assets/svgs/settings/lock.svg';
   static const String darkModeLogo = 'assets/svgs/settings/mobile.svg';
   static const String backArrowLogo = 'assets/svgs/settings/Vector.svg';
+  //-----------------Orders screen-----------------
+  static const String onCompleteOrdersImages =
+      'assets/svgs/orders_history/01 Online Shopping 2.svg';
 }
