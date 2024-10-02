@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_text_style.dart';
 import '../widgets/on_complete_tab_bar_widget.dart';
@@ -18,26 +19,26 @@ class OrdersScreen extends StatelessWidget {
           ),
           centerTitle: true,
           bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(60),
+            preferredSize:  Size.fromHeight(60.h),
             child: ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              borderRadius:  BorderRadius.all(Radius.circular(10.r)),
               child: Container(
-                height: 40,
-                margin: const EdgeInsets.symmetric(horizontal: 20),
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                height: 40.h,
+                margin:  EdgeInsets.symmetric(horizontal: 20.h),
+                decoration:  BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10.r)),
                   color: AppColors.threeGrey,
                 ),
-                child: const TabBar(
+                child:  TabBar(
                   indicatorSize: TabBarIndicatorSize.tab,
                   dividerColor: Colors.transparent,
                   indicator: BoxDecoration(
                     color: AppColors.blackColor,
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    borderRadius: BorderRadius.all(Radius.circular(10.r)),
                   ),
                   labelColor: Colors.white,
                   unselectedLabelColor: Colors.black54,
-                  tabs: [
+                  tabs: const[
                     Tab(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
