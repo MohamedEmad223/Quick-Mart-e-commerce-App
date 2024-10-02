@@ -6,7 +6,7 @@ import 'package:quick_mart/core/helpers/app_images.dart';
 import 'package:quick_mart/features/cart/cart_screen.dart';
 import 'package:quick_mart/features/categories/categories_screen.dart';
 import 'package:quick_mart/features/settings/views/screens/profile_screen.dart';
-import 'package:quick_mart/features/whislist/wishlist_screen.dart';
+import 'package:quick_mart/features/whislist/views/screens/wishlist_screen.dart';
 
 import '../../features/home/logic/botnavbar/cubit/botnavbar_cubit.dart';
 import '../../features/home/views/screens/home_screen.dart';
