@@ -19,17 +19,17 @@ class OrdersScreen extends StatelessWidget {
           ),
           centerTitle: true,
           bottom: PreferredSize(
-            preferredSize:  Size.fromHeight(60.h),
+            preferredSize: Size.fromHeight(60.h),
             child: ClipRRect(
-              borderRadius:  BorderRadius.all(Radius.circular(10.r)),
+              borderRadius: BorderRadius.all(Radius.circular(10.r)),
               child: Container(
                 height: 40.h,
-                margin:  EdgeInsets.symmetric(horizontal: 20.h),
-                decoration:  BoxDecoration(
+                margin: EdgeInsets.symmetric(horizontal: 20.h),
+                decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(10.r)),
                   color: AppColors.threeGrey,
                 ),
-                child:  TabBar(
+                child: TabBar(
                   indicatorSize: TabBarIndicatorSize.tab,
                   dividerColor: Colors.transparent,
                   indicator: BoxDecoration(
@@ -38,7 +38,7 @@ class OrdersScreen extends StatelessWidget {
                   ),
                   labelColor: Colors.white,
                   unselectedLabelColor: Colors.black54,
-                  tabs: const[
+                  tabs: const [
                     Tab(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,

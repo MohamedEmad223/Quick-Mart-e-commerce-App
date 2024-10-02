@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../widgets/lable_row.dart';
+import 'package:quick_mart/features/whislist/logic/cubit/whilist_cubit.dart';
 import '../widgets/product_gride_item.dart';
+import '../widgets/lable_row.dart';
 import '../widgets/row_of_home_screen_widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,6 +11,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.read<WhilistCubit>().loadProducts();
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -26,16 +29,29 @@ class HomeScreen extends StatelessWidget {
               ),
               SizedBox(height: 20.h),
               Expanded(
-                child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 5,
-                    mainAxisSpacing: 2,
-                    childAspectRatio: 1,
-                  ),
-                  itemCount: 6,
-                  itemBuilder: (context, index) {
-                    return const ProductGridItem();
+                child: BlocBuilder<WhilistCubit, WhilistState>(
+                  builder: (context, state) {
+                    if (state is WhilistLoading) {
+                      return const Center(child: CircularProgressIndicator());
+                    } else if (state is WhilistLoaded) {
+                      return GridView.builder(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 5,
+                          mainAxisSpacing: 2,
+                          childAspectRatio: 1,
+                        ),
+                        itemCount: state.products.length,
+                        itemBuilder: (context, index) {
+                          final product = state.products[index];
+                          return ProductGridItem(product: product);
+                        },
+                      );
+                    } else if (state is WhilistError) {
+                      return Center(child: Text(state.message));
+                    }
+                    return const SizedBox.shrink();
                   },
                 ),
               ),

@@ -1,16 +1,15 @@
+// product_grid_item.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quick_mart/features/whislist/logic/cubit/whilist_cubit.dart';
+import '../../../whislist/data/products_model.dart';
 
-class ProductGridItem extends StatefulWidget {
-  const ProductGridItem({super.key});
 
-  @override
-  // ignore: library_private_types_in_public_api
-  _ProductGridItemState createState() => _ProductGridItemState();
-}
+class ProductGridItem extends StatelessWidget {
+  final Product product;
 
-class _ProductGridItemState extends State<ProductGridItem> {
-  bool isFavorite = false; 
+  const ProductGridItem({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -34,20 +33,18 @@ class _ProductGridItemState extends State<ProductGridItem> {
                 right: 5.w,
                 child: IconButton(
                   icon: Icon(
-                    isFavorite ? Icons.favorite : Icons.favorite_border,
-                    color: isFavorite ? Colors.red : Colors.grey,
+                    product.isFavorite ? Icons.favorite : Icons.favorite_border,
+                    color: product.isFavorite ? Colors.red : Colors.grey,
                   ),
                   onPressed: () {
-                    setState(() {
-                      isFavorite = !isFavorite; 
-                    });
+                    context.read<WhilistCubit>().toggleFavorite(product);
                   },
                 ),
               ),
             ],
           ),
-          const Text('Product Name'),
-          const Text('Price'),
+          Text(product.name),
+          Text('Price: \$${product.price}'),
         ],
       ),
     );

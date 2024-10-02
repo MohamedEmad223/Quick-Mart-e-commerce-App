@@ -78,7 +78,6 @@ flutter:
     - assets/svgs/
     - assets/svgs/home/
     - assets/svgs/settings/
-    - assets/svgs/orders_history
     - assets/svgs/success/
     - assets/svgs/on_boarding/
     - assets/svgs/splash/
