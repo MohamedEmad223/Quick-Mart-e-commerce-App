@@ -28,6 +28,7 @@ import '../../features/auth/sign_in/sign_up/views/screens/sign_up_screen.dart';
 import '../../features/home/logic/botnavbar/cubit/botnavbar_cubit.dart';
 import '../../features/home/views/screens/home_screen.dart';
 import '../../features/splash/screens/splash_screen.dart';
+import '../../features/whislist/views/screens/wishlist_screen.dart';
 import '../widgets/bottom_nav_bar.dart';
 
 class AppRoutes {
@@ -114,7 +115,8 @@ class AppRoutes {
             child: const CreatePasswordScreen(),
           ),
         );
-
+case Routes.whislist:
+        return MaterialPageRoute(builder: (context) => const WishlistScreen());
       case Routes.botNavBar:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
