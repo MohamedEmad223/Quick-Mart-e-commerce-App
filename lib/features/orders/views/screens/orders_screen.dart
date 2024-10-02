@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_text_style.dart';
 
@@ -67,23 +66,36 @@ class OrdersScreen extends StatelessWidget {
             ),
           ),
         ),
-        body:  TabBarView(
+        body: TabBarView(
           children: [
             // First tab content
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  SvgPicture.asset(),
+                  Text('On Going'),
                 ],
               ),
             ),
             // Second tab content
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  Text('Orders'),
+                  Image.asset('assets/images/01 Online Shopping 2.png'),
+                  Text(
+                    'No completed order',
+                    style: AppTextStyle.plusJakartaSans16BoldMainColor
+                        .copyWith(color: AppColors.blackColor, fontSize: 20.sp),
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Text(
+                    'We don\'t have any past orders that have been completed.completed. Start shopping now and create your first order with us.',
+                    style: AppTextStyle.plusJakartaSans14mediumlsecGreyColor,
+                    textAlign: TextAlign.center,
+                  ),
                 ],
               ),
             ),
