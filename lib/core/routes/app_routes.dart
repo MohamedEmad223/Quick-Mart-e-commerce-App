@@ -6,6 +6,7 @@ import 'package:quick_mart/features/auth/forget_password/logic/forget_password/c
 import 'package:quick_mart/features/auth/forget_password/views/screens/success_screen.dart';
 import 'package:quick_mart/features/auth/sign_in/sign_up/data/repo/sign_up_repo.dart';
 import 'package:quick_mart/features/auth/sign_in/sign_up/views/screens/log_in_screen.dart';
+import 'package:quick_mart/features/home/views/screens/details_screen.dart';
 import 'package:quick_mart/features/on_boarding/view/screen/on_boarding_screen.dart';
 import 'package:quick_mart/features/orders/views/screens/orders_screen.dart';
 import 'package:quick_mart/features/settings/views/screens/change_password.dart';
@@ -130,7 +131,8 @@ class AppRoutes {
             ),
           ], child: const BottomNav()),
         );
-
+      case Routes.settings:
+        return MaterialPageRoute(builder: (context) => const DetailsScreen());
       case Routes.settings:
         return MaterialPageRoute(builder: (context) => const ProfileScreen());
       case Routes.shippingAddress:

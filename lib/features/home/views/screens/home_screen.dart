@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_mart/features/whislist/logic/cubit/whilist_cubit.dart';
+import '../../../../core/routes/routes.dart';
 import '../widgets/product_gride_item.dart';
 import '../widgets/lable_row.dart';
 import '../widgets/row_of_home_screen_widgets.dart';
@@ -34,19 +35,24 @@ class HomeScreen extends StatelessWidget {
                     if (state is WhilistLoading) {
                       return const Center(child: CircularProgressIndicator());
                     } else if (state is WhilistLoaded) {
-                      return GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          crossAxisSpacing: 5,
-                          mainAxisSpacing: 2,
-                          childAspectRatio: 1,
-                        ),
-                        itemCount: state.products.length,
-                        itemBuilder: (context, index) {
-                          final product = state.products[index];
-                          return ProductGridItem(product: product);
+                      return InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, Routes.details);
                         },
+                        child: GridView.builder(
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 5,
+                            mainAxisSpacing: 2,
+                            childAspectRatio: 1,
+                          ),
+                          itemCount: state.products.length,
+                          itemBuilder: (context, index) {
+                            final product = state.products[index];
+                            return ProductGridItem(product: product);
+                          },
+                        ),
                       );
                     } else if (state is WhilistError) {
                       return Center(child: Text(state.message));

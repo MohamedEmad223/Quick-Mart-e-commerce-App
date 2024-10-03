@@ -6,23 +6,19 @@ import '../../../../core/theming/app_text_style.dart';
 import '../../../../core/widgets/custom_button.dart';
 
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen(
-      {super.key,
-      required this.image,
-      required this.price,
-      required this.productName});
-  final String image;
-  final String price;
-  final String productName;
+  const DetailsScreen({super.key, this.image, this.price, this.productName});
+  final String? image;
+  final String? price;
+  final String? productName;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(
       children: [
-        Image.asset(image),
-        Text(productName),
-        Text(price),
+        Image.asset(image!),
+        Text(productName!),
+        Text(price!),
         Row(
           children: [
             CustomButton(
