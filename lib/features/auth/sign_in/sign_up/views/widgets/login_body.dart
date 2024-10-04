@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quick_mart/core/constants/app_constants.dart';
+import 'package:quick_mart/core/helpers/cache_helper.dart';
 import 'package:quick_mart/core/helpers/helper_methods.dart';
 import 'package:quick_mart/core/routes/routes.dart';
 import 'package:quick_mart/core/widgets/custom_text_form_feild.dart';
@@ -55,6 +56,8 @@ class _LoginBodyState extends State<LoginBody> {
           Navigator.pushNamedAndRemoveUntil(
               context, Routes.home, (route) => false);
           HelperMethods.showCustomSnackBarSuccess(context, 'Login Success');
+          CacheHelper()
+              .saveSecuredData(key: 'token', value: state.loginModel!.token!);
         }
       },
       child: Form(
