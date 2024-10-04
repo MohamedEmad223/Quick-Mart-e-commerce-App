@@ -19,7 +19,7 @@ class QuickMart extends StatelessWidget {
         darkTheme: darkTheme,
         themeMode: ThemeMode.system, // Set to ThemeMode.dark for default dark mode
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.botNavBar,
+        initialRoute: Routes.splash,
         onGenerateRoute: AppRoutes().onGenerateRoute,
       ),
     );
