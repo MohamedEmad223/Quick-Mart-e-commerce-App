@@ -13,7 +13,6 @@ import 'package:quick_mart/features/settings/views/screens/change_password.dart'
 import 'package:quick_mart/features/settings/views/screens/dark_mode_screen.dart';
 import 'package:quick_mart/features/settings/views/screens/faqs_screen.dart';
 import 'package:quick_mart/features/settings/views/screens/privacy_screen.dart';
-import 'package:quick_mart/features/settings/views/screens/profile_screen.dart';
 import 'package:quick_mart/features/settings/views/screens/shipping_address_screen.dart';
 import 'package:quick_mart/features/settings/views/screens/term_and_conditions.dart';
 import 'package:quick_mart/features/whislist/logic/cubit/whilist_cubit.dart';
@@ -133,8 +132,8 @@ class AppRoutes {
         );
       case Routes.settings:
         return MaterialPageRoute(builder: (context) => const DetailsScreen());
-      case Routes.settings:
-        return MaterialPageRoute(builder: (context) => const ProfileScreen());
+      case Routes.home:
+        return MaterialPageRoute(builder: (context) => const HomeScreen());
       case Routes.shippingAddress:
         return MaterialPageRoute(
             builder: (context) => const ShippingAddressScreen());

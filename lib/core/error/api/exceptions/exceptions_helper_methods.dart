@@ -26,8 +26,6 @@ class ExceptionHelperMethods {
         throw ApiException(
           errorModel: ErrorModel.fromJson(noInternetErrorMessage),
         );
-      default:
-        throwApiException();
     }
   }
 

@@ -18,7 +18,7 @@ dependencies:
   either_dart: ^1.0.0
   pretty_dio_logger: ^1.4.0
   # for local storage
-  shared_preferences: ^2.3.2
+  shared_preferences: ^2.5.2
   flutter_secure_storage: ^9.2.2
   # for caching image
   cached_network_image: ^3.4.1
@@ -26,8 +26,6 @@ dependencies:
   flutter_svg: ^2.0.10+1
   # for fonts
   google_fonts: ^6.2.1
-  # for flutter offline
-  connectivity_plus: ^6.0.5
   # for Responsive UI
   flutter_screenutil: ^5.9.3
   # for change icon app

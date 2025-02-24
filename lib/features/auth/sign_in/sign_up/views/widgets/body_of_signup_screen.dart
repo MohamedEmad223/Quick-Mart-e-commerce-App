@@ -54,7 +54,7 @@ class _BodyOfSignupScreenState extends State<BodyOfSignupScreen> {
         if (state is SignUpSuccess) {
           Navigator.pop(context);
           Navigator.pushNamedAndRemoveUntil(
-              context, Routes.home, (route) => false);
+              context, Routes.logIn, (route) => false);
           HelperMethods.showCustomSnackBarSuccess(context, 'SignUp Success');
         }
       },
