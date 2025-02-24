@@ -54,7 +54,7 @@ class _LoginBodyState extends State<LoginBody> {
         }
         if (state is LoginSuccess) {
           Navigator.pushNamedAndRemoveUntil(
-              context, Routes.home, (route) => false);
+              context, Routes.botNavBar, (route) => false);
           HelperMethods.showCustomSnackBarSuccess(context, 'Login Success');
           CacheHelper()
               .saveSecuredData(key: 'token', value: state.loginModel!.token!);
