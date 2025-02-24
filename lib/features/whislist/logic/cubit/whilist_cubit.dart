@@ -28,16 +28,19 @@ class WhilistCubit extends Cubit<WhilistState> {
   }
 
   void toggleFavorite(Product product) {
-    if (state is WhilistLoaded) {
-      product.isFavorite = !product.isFavorite;
-      if (product.isFavorite) {
-        wishlist.add(product);
-      } else {
-        wishlist.remove(product);
-      }
+  if (state is WhilistLoaded) {
+    product.isFavorite = !product.isFavorite;
 
-      // Emit updated product and wishlist state
-      emit(WhilistLoaded(products: products, wishlist: wishlist));
+    final updatedWishlist = List<Product>.from(wishlist);
+    if (product.isFavorite) {
+      updatedWishlist.add(product);
+    } else {
+      updatedWishlist.removeWhere((p) => p.name == product.name);
     }
+
+    wishlist = updatedWishlist;
+
+    emit(WhilistLoaded(products: products, wishlist: wishlist));
   }
+}
 }

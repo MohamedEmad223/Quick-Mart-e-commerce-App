@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quick_mart/features/home/views/screens/details_screen.dart';
 import 'package:quick_mart/features/whislist/logic/cubit/whilist_cubit.dart';
-import '../../../../core/routes/routes.dart';
 import '../widgets/product_gride_item.dart';
 import '../widgets/lable_row.dart';
 import '../widgets/row_of_home_screen_widgets.dart';
@@ -37,7 +37,11 @@ class HomeScreen extends StatelessWidget {
                       } else if (state is WhilistLoaded) {
                         return InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, Routes.details);
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const DetailsScreen()));
                           },
                           child: GridView.builder(
                             gridDelegate:
